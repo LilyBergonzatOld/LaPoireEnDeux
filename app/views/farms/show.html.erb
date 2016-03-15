@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
-
+<h1><%= @farm %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @farm.name %>
+  <%= @farm.address %><br/>
+  <%= @farm.zipcode %> <%= @farm.city %>
 </p>
+<p><%= link_to @farm.owner, @farm.owner %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @farm.address %>
-</p>
+<%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @farm.zipcode %>
-</p>
+<h2>Produits</h2>
 
-<p>
-  <strong>City:</strong>
-  <%= @farm.city %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @farm.owner_id %>
-</p>
-
-<%= link_to 'Edit', edit_farm_path(@farm) %> |
-<%= link_to 'Back', farms_path %>
+<ul>
+<% @farm.products.each do |product| %>
+  <li><%= link_to product, product %></li>
+<% end %>
+</ul>

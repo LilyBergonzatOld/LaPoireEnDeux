@@ -1,0 +1,5 @@
+<h1><%= @product %></h1>
+<p><%= link_to @product.farm, @product.farm %></p>
+<p><%= @product.price %> €</p>
+
+<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default btn-sm'  %>

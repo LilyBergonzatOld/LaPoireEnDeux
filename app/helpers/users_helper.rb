@@ -1,16 +1,14 @@
 # == Schema Information
 #
-# Table name: farms
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  address    :string
-#  zipcode    :string
-#  city       :string
-#  owner_id   :integer
+#  first_name :string
+#  last_name  :string
+#  email      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-module FarmsHelper
+module UsersHelper
 end

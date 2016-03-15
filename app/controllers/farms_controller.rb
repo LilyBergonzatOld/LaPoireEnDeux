@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: farms
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  address    :string
+#  zipcode    :string
+#  city       :string
+#  owner_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class FarmsController < ApplicationController
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 

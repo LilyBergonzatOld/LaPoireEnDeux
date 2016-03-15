@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :users
   resources :farms
   
   root 'farms#index'
