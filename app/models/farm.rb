@@ -16,6 +16,10 @@ class Farm < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
   has_many :products
 
+  def full_address
+    "#{address} #{zipcode} #{city} FRANCE"
+  end
+
   def to_s
     "#{name}"
   end
