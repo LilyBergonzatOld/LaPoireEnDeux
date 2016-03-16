@@ -1,0 +1,9 @@
+<%= simple_form_for @farm do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :zipcode %>
+  <%= f.input :city %>
+  <%= f.association :owner %>
+  <%= f.button :submit %>
+<% end %>
+

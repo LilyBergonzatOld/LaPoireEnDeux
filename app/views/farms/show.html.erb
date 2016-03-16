@@ -1,0 +1,20 @@
+<h1><%= @farm %></h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>
+      <%= @farm.address %><br/>
+      <%= @farm.zipcode %> <%= @farm.city %>
+    </p>
+    <p><%= link_to @farm.owner, @farm.owner %></p>
+    <%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
+  </div>
+  <div class="col-md-8">
+    <h2>Produits</h2>
+    <ul class="list-unstyled">
+    <% @farm.products.each do |product| %>
+      <li><%= link_to product, product %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>

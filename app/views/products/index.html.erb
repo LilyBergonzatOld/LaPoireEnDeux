@@ -1,0 +1,26 @@
+<h1>Produits</h1>
+<%= link_to 'New Product', new_product_path, class: 'btn btn-default' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Farm</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product, product %></td>
+        <td><%= product.price %></td>
+        <td><%= product.farm_id %></td>
+        <td>
+          <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary btn-sm' %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
