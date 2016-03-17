@@ -16,12 +16,18 @@
         <td><%= link_to shopping_cart_item.item, shopping_cart_item.item %></td>
         <td><%= number_to_currency shopping_cart_item.item.price %></td>
         <td>
-          <%= link_to raw('<i class="glyphicon glyphicon-minus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -1), method: :post %>
+          <%= link_to raw('<i class="glyphicon glyphicon-minus-sign"></i>'), 
+                shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -1), 
+                method: :post %>
           <%= shopping_cart_item.quantity %>
-          <%= link_to raw('<i class="glyphicon glyphicon-plus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: 1), method: :post %>
+          <%= link_to raw('<i class="glyphicon glyphicon-plus-sign"></i>'), 
+                shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: 1), 
+                method: :post %>
         </td>
         <td><%= number_to_currency shopping_cart_item.subtotal %></td>
-        <td><%= link_to raw('<i class="glyphicon glyphicon-remove-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -shopping_cart_item.quantity), method: :post %></td>
+        <td><%= link_to raw('<i class="glyphicon glyphicon-remove-sign"></i>'), 
+                  shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -shopping_cart_item.quantity), 
+                  method: :post %></td>
       </tr>
     <% end %>
     </table>
