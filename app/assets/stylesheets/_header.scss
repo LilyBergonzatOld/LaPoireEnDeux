@@ -18,9 +18,11 @@
 	background-color : $main-color;
 }
 
-//.header-panier {
-//	width: 150px;
-//}
+#navbar .item-compte {
+	text-align: right;
+	height: 30px;
+}
+
 .header-panier img {
 	height: 20px;
 	padding: 0;
@@ -30,4 +32,8 @@
 .header-panier p {
 	display: inline-block;
 	margin: 0;
+}
+
+.navbar-header {
+	margin: 15px;
 }
