@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 
 gem 'rails', '4.2.6'
+gem 'rails-i18n'
 gem 'rake', '11.1.1'
 gem 'pg'
 gem 'uglifier'
@@ -10,10 +11,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
+gem 'devise-i18n'
 # gem 'rails_12factor'
 gem 'simple_form'
 gem 'sass-rails'                                            # SASS                            https://github.com/rails/sass-rails
 gem 'bootstrap-sass'                                        # Bootstrap                       https://github.com/twbs/bootstrap-sass
+gem 'acts_as_shopping_cart'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

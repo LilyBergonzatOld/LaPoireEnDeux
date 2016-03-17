@@ -14,11 +14,12 @@
                 <%= image_tag "logo.jpg", {class: 'col-xs-2 header-titre'} %>
                 <%= link_to 'La Poire en Deux', root_path, class: 'navbar-brand col-xs-8' %>
                 <div class="header-panier col-xs-2">
-                    <%= image_tag "panier.png", class: 'col-xs-2' %>
-                    <p class="text-center price">0,00€</p>
+                    <%= link_to shopping_cart_path do %>
+                      <%= image_tag "panier.png", class: 'col-xs-2' %>
+                      <p class="text-center price"><%= number_to_currency @shopping_cart.total %></p>
+                    <% end %>
                 </div>
             </div>
-
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right row">
             <ul class="nav navbar-nav">
@@ -30,10 +31,10 @@
                 <li class="col-md-2"><%= link_to 'Produits', products_path, {class: 'text-center'} %></li>
                 <% if signed_in? %>
                     <li><%= link_to current_user.email, edit_user_registration_path %></li>
-                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
                 <% else %>
-                    <li><%= link_to "Register", new_user_registration_path %></li>
-                    <li><%= link_to "Login", new_user_session_path %></li>
+                    <li><%= link_to t('devise.shared.links.sign_up'), new_user_registration_path %></li>
+                    <li><%= link_to t('devise.shared.links.sign_in'), new_user_session_path %></li>
                 <% end %>
             </ul>
         </div>
