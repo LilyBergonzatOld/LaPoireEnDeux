@@ -2,5 +2,5 @@
   <h3><%= link_to product, product %></h3>
   <p class="farm"><%= link_to product.farm, product.farm %></p>
   <p class="price"><%= number_to_currency product.price %></p>
-  <%= link_to 'Add to cart', shopping_cart_path(product_id: product.id), :method => 'POST' , class: 'btn btn-primary btn-sm' %>
+  <%= link_to 'Add to cart', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm' %>
 </article>

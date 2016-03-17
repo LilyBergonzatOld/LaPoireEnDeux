@@ -1,6 +1,4 @@
 <h1>Panier</h1>
-
-
 <div class="row">
   <div class="col-md-9">
     <table class="table">
@@ -10,14 +8,20 @@
           <th>Prix unitaire</th>
           <th>Quantité</th>
           <th>Prix total</th>
+          <th></th>
         </tr>
       </thead>
     <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
       <tr>
         <td><%= link_to shopping_cart_item.item, shopping_cart_item.item %></td>
         <td><%= number_to_currency shopping_cart_item.item.price %></td>
-        <td><%= shopping_cart_item.quantity %></td>
+        <td>
+          <%= link_to raw('<i class="glyphicon glyphicon-minus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -1), method: :post %>
+          <%= shopping_cart_item.quantity %>
+          <%= link_to raw('<i class="glyphicon glyphicon-plus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: 1), method: :post %>
+        </td>
         <td><%= number_to_currency shopping_cart_item.subtotal %></td>
+        <td><%= link_to raw('<i class="glyphicon glyphicon-remove-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -shopping_cart_item.quantity), method: :post %></td>
       </tr>
     <% end %>
     </table>
