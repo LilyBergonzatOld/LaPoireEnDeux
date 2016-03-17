@@ -17,11 +17,17 @@
 #navbar .nav li:hover {
 	background-color : $main-color;
 }
+
+//.header-panier {
+//	width: 150px;
+//}
 .header-panier img {
-	width: 100%;
+	height: 20px;
+	padding: 0;
+	margin-right: 10px;
 	display: inline-block;
 }
-.header-panier {
-	width: 150px;
+.header-panier p {
+	display: inline-block;
+	margin: 0;
 }
-

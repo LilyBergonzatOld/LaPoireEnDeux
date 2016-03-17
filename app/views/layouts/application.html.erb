@@ -10,7 +10,7 @@
 <nav class="navbar navbar-default navbar-static-top" id='header'>
     <div class="container">
 		<div class='navbar-brand'>
-			<h1><%= image_tag "logo_vertical.png", {class:'header-titre', alt:'La poire en deux'} %></h1>
+			<h1><%= link_to image_tag("logo-horizontal.png", {class:'header-titre', alt:'La poire en deux'}) %></h1>
 		</div>
         <div id="navbar" class="collapse navbar-collapse navbar-right row">
             <ul class="nav navbar-nav">
@@ -27,7 +27,7 @@
                 <% end %>
 				<li>
 					<%= link_to shopping_cart_path, class:'header-panier' do %>
-                      <%= image_tag "panier.png", class: 'col-xs-2' %>
+                      <%= image_tag "panier.png" %>
                       <p class="text-center price"><%= number_to_currency @shopping_cart.total %></p>
                  	<% end %>
 				</li>
