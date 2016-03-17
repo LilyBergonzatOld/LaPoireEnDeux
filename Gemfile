@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
 gem 'devise-i18n'
+gem 'cancancan'
 # gem 'rails_12factor'
 gem 'simple_form'
 gem 'sass-rails'                                            # SASS                            https://github.com/rails/sass-rails

@@ -2,23 +2,23 @@
 <%= link_to 'New User', new_user_path, class: 'btn btn-default' %>
 
 <table class="table">
-  <thead>
+    <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th></th>
+        <th>Nickname</th>
+        <th>Email</th>
+        <th></th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user, user %></td>
-        <td><%= user.email %></td>
-        <td>
-          <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-        </td>
-      </tr>
+        <tr>
+            <td><%= link_to user, user %></td>
+            <td><%= user.email %></td>
+            <td>
+                <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-primary btn-sm' %>
+                <%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %>
+            </td>
+        </tr>
     <% end %>
-  </tbody>
+    </tbody>
 </table>

@@ -22,7 +22,7 @@
 				<li class='dropdown'>
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Mon Compte <b class="caret"></b></a>
 					<ul class='dropdown-menu'>
-						<li><%= link_to current_user.email, edit_user_registration_path, {class: 'text-center item-compte'} %></li>
+						<li><%= link_to current_user.nickname, edit_user_registration_path, {class: 'text-center item-compte'} %></li>
 						<li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: 'text-center item-compte' %></li>
 					</ul>
 				</li>

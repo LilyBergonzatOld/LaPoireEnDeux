@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   has_many :farms
   
   def to_s
-    "#{first_name} #{last_name}"
+    "#{nickname}"
   end
 end
