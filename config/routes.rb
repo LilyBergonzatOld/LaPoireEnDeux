@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :farms
-  resource :shopping_cart
+  get 'shopping-cart' => 'shopping_cart#index'
+  post 'shopping-cart' => 'shopping_cart#set'
   
   root 'home#index'
 end

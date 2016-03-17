@@ -1,22 +1,16 @@
 <h1><%= @farm %></h1>
+<p>
+  <%= @farm.address %><br/>
+  <%= @farm.zipcode %> <%= @farm.city %>
+</p>
+<p><%= link_to @farm.owner, @farm.owner %></p>
+<%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
 
+<h2>Produits</h2>
 <div class="row">
-  <div class="col-md-4">
-    <p>
-      <%= @farm.address %><br/>
-      <%= @farm.zipcode %> <%= @farm.city %>
-    </p>
-    <p><%= link_to @farm.owner, @farm.owner %></p>
-    <%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
-  </div>
-  <div class="col-md-8">
-    <h2>Produits</h2>
-    <div class="row">
-      <% @farm.products.each do |product| %>
-        <div class="col-md-3">
-          <%= render 'products/product', product: product %>
-        </div>
-      <% end %>
+  <% @farm.products.each do |product| %>
+    <div class="col-md-3">
+      <%= render 'products/product', product: product %>
     </div>
-  </div>
+  <% end %>
 </div>

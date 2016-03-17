@@ -9,4 +9,8 @@
 
 class ShoppingCart < ActiveRecord::Base
   acts_as_shopping_cart
+
+  def tax_pct
+    5.5
+  end
 end
