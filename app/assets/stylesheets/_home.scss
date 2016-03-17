@@ -1,0 +1,128 @@
+// Place all the styles related to the HomeController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#navbar, #navbar ul {
+	width: 100%;
+}
+
+.header-panier img {
+	width: 100%;
+}
+
+
+header{
+    background-color: $main-bg-color;
+
+    .header-content{
+            // border: 1px solid black;
+        position: relative;
+        padding: 1.5% 0 1.5% 0;
+        /*width: 100%;*/
+
+        .header-logo{
+                // border: 1px black solid;
+            position: relative;
+
+            img{
+                position: relative;
+                width: 85%;
+                margin: auto;
+                display: block;
+            }
+        
+        }
+
+        .header-titre{
+            position: relative;
+            text-align: center;
+
+            h1{
+                position: relative;
+                font-family: $main-title-font;
+                color: $main-color;
+                margin-top: 0;
+                font-size: 3.5vw;
+                margin-bottom: -1.5%;
+            }
+
+            h2{
+                position: relative;
+                font-family: $subtitle-font;
+                color: $secondary-color;
+                font-size: 1.5vw;
+            }
+
+        }
+
+        .header-panier{
+            position: relative;
+            width: 7%;
+                text-align: center;
+
+            img{
+                position: relative;
+                width: 100%;
+            }
+
+            p{
+                position: relative;
+                color: $secondary-color;
+                font-family: $sitewide-font;
+                font-size: 1.2vw;
+            }
+
+        }
+
+    }
+
+    nav{
+            // border: 1px solid #ff0000;
+        position: relative;
+        background-color: $main-color;
+        text-align: center;
+        margin: 0;
+
+        a{
+                // border: 1px black solid;
+            position: relative;
+            font-family: $sitewide-font;
+            color: $main-bg-color;
+            text-transform: uppercase;
+            font-size: 1vw;
+            padding: 1% 0 1% 0;
+            transition: 0.2s background-color ease-in;
+
+            &:hover{   
+                color: $secondary-color;
+                // background-color: $main-bg-color;
+                background-color: $main-bg-color;
+                text-decoration: none;
+                transition: 0.2s background-color ease-in;
+            }
+
+        }
+
+        #connection-button{
+            font-weight: bold;
+            color: $secondary-color;
+
+            &:hover{
+                // color: $main-color;
+                background-color: $main-bg-color;
+            }
+        }
+
+        #inscription-button{
+            font-weight: bold;
+            color: $main-bg-color;
+            background-color: $secondary-color;
+
+            &:hover{
+                color: $secondary-color;
+                background-color: $main-bg-color;
+            }
+        }
+
+    }
+
+}
