@@ -1,7 +1,27 @@
-#navbar, #navbar ul {
-	width: 100%;
+#header {
+	background-color:white; 
+	height: 80px;
 }
 
+#header h1, #header h2 {
+	margin:0;
+}
+#header h1 img {
+	height: 50px;
+}
+
+
+#navbar {
+	margin-top: 15px;
+}
+#navbar .nav li:hover {
+	background-color : $main-color;
+}
 .header-panier img {
 	width: 100%;
+	display: inline-block;
 }
+.header-panier {
+	width: 150px;
+}
+
