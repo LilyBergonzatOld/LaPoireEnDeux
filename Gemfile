@@ -9,6 +9,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'devise'
 # gem 'rails_12factor'
 gem 'simple_form'
 gem 'sass-rails'                                            # SASS                            https://github.com/rails/sass-rails
