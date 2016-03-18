@@ -2,17 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#result_section {
+#result_section, #farm_section {
 	.menu-filter {
-		background-color: gainsboro;
-		padding:20px 25px;
-		border-radius: 5px;
-		
 		.filter-section {
-			
+			background-color: $secondary-bg-color;
+			padding:20px 10px;
+			border-radius: 5px;
+			margin-bottom: 20px;
 			.filter-section-title {
 				text-align: center;
-				font-weight: bold;
+				font-weight: 300;
+				text-transform: uppercase;
+				color: $main-color; 
 			}
 
 			.filter {
@@ -29,26 +30,7 @@
 				height: 30px;
 			}
 			
-		}
-		
-		.filter-section:nth-child(2)::before {
-			content:'';
-			width: 80%;
-			height: 3px; 
-			display: block;
-			margin: 20px auto;
-			background-color:#fe5465;
-		}
-		
-		.filter-section:nth-child(2)::after {
-			content:'';
-			width: 80%;
-			height: 3px; 
-			display: block;
-			margin: 20px auto;
-			background-color:#fe5465;
-		}
-		
+		}		
 		form {
 			.input-group-btn, .input-group-btn input {
 				display: inline-block;
@@ -58,6 +40,8 @@
 			}
 		}
 	}
+}
+#result_section {
 	.results {
 		.form-inline {
 				
@@ -84,61 +68,6 @@
 }
 
 #farm_section {
-	.menu-filter {
-		background-color: gainsboro;
-		padding:20px 25px;
-		border-radius: 5px;
-		
-		.filter-section {
-			
-			.filter-section-title {
-				text-align: center;
-				font-weight: bold;
-			}
-
-			.filter {
-				display: block;
-				font-weight: normal;
-
-				input[type="checkbox"] {
-					margin:0 10px;
-				}			
-			}
-			
-			input[type="text"]{
-				width: 81%;
-				height: 30px;
-			}
-			
-		}
-		
-		.filter-section:nth-child(2)::before {
-			content:'';
-			width: 80%;
-			height: 3px; 
-			display: block;
-			margin: 20px auto;
-			background-color:#fe5465;
-		}
-		
-		.filter-section:nth-child(2)::after {
-			content:'';
-			width: 80%;
-			height: 3px; 
-			display: block;
-			margin: 20px auto;
-			background-color:#fe5465;
-		}
-		
-		form {
-			.input-group-btn, .input-group-btn input {
-				display: inline-block;
-				max-width: 20%;
-				height: 30px;
-				margin-left:-5px;				
-			}
-		}
-	}
 	.results {
 		h2 {
 			margin-top:0;

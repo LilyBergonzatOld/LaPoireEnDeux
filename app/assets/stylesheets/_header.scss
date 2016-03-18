@@ -1,6 +1,6 @@
 #header {
 	
-	background-color:white; 
+	background-color:$main-bg-color; 
 	height: 80px;
 	
 	h1, h2 {
@@ -9,15 +9,18 @@
 			height: 50px;
 		}
 	}
-	
+	.navbar-header {
+		button.navbar-toggle {
+			margin-top:20px;
+		}
+	}
 	#navbar {
 		margin-top: 15px;
 		
-		.navbar-header {
-			margin: 15px;
-		}
+
 		.nav li a{
 			padding:10px;
+			background-color : $main-bg-color;
 		}
 		.nav li:hover {
 			background-color : $main-color;
