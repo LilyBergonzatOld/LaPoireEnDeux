@@ -1,119 +1,116 @@
 // Place all the styles related to the HomeController controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header{
-    background-color: $main-bg-color;
 
-    .header-content{
-            // border: 1px solid black;
+
+#presentation {
+    width: 100%;
+    background-image: asset-url("images/sitewide/home-bg/auvergne.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .overlay{
+        min-height: 24vw;
+        max-width: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: table;
+        vertical-align: middle;
+    }
+
+    .presentation-content{
         position: relative;
-        padding: 1.5% 0 1.5% 0;
-        /*width: 100%;*/
+        display: table-cell;
+        vertical-align: middle;
+    }
 
-        .header-logo{
-                // border: 1px black solid;
+    .recherche-baseline {
+        // margin-top: 100px;
+        // padding: 5% 0 5% 0;
+    }
+
+    .recherche-baseline p {
+        font-family: $sitewide-font;
+        color: $main-bg-color;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #333;
+        margin-bottom: 2%;
+    }
+
+    form.form-inline {
+        // margin-top : 50px; 
+    }
+
+    input[type="text"]{
+        height: 30px;
+    }
+
+    form span.input-group-btn {
+        width: 30px;
+    }
+    form .recherche{
+        background-image: url("/assets/images/icones/zoom.png");
+        background-color: $secondary-color;
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+        height: 100%;
+        height: 30px;
+        width: 30px;
+    }
+
+}
+
+#boutique-selection{
+
+    padding: 30px 0;
+
+    .section-title {
+        margin-top: 3%;
+        margin-bottom: 2%;
+        font-family: $sitewide-font;
+        color : $secondary-color;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .item-boutique {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        // min-height: 300px;
+
+        .item-boutique-fond {
             position: relative;
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: cover;
 
-            img{
+            .item-boutique-filtre{
                 position: relative;
-                width: 85%;
-                margin: auto;
-                display: block;
+                background-color: rgba(0,0,0,0.5);
+                height: 100%;
+                @include transition(background-color .1s ease);
+
+                &:hover {
+                    background-color: rgba(0,0,0,0.25);
+                }
+
             }
-        
-        }
-
-        .header-titre{
-            position: relative;
-            text-align: center;
-
-            h1{
-                position: relative;
-                font-family: $main-title-font;
-                color: $main-color;
-                margin-top: 0;
-                font-size: 3.5vw;
-                margin-bottom: -1.5%;
-            }
-
-            h2{
-                position: relative;
-                font-family: $subtitle-font;
-                color: $secondary-color;
-                font-size: 1.5vw;
-            }
-
-        }
-
-        .header-panier{
-            position: relative;
-            width: 7%;
-                text-align: center;
-
-            img{
-                position: relative;
+    
+            .item-boutique-title {
                 width: 100%;
-            }
-
-            p{
-                position: relative;
-                color: $secondary-color;
+                padding-top: 20px;
+                color: $main-bg-color;
                 font-family: $sitewide-font;
-                font-size: 1.2vw;
+                font-size: 24px;
+                text-shadow: 1px 1px 1px #333;
+                // font-weight: bold;
+                text-align: center;
             }
 
         }
-
     }
-
-    nav{
-            // border: 1px solid #ff0000;
-        position: relative;
-        background-color: $main-color;
-        text-align: center;
-        margin: 0;
-
-        a{
-                // border: 1px black solid;
-            position: relative;
-            font-family: $sitewide-font;
-            color: $main-bg-color;
-            text-transform: uppercase;
-            font-size: 1vw;
-            padding: 1% 0 1% 0;
-            transition: 0.2s background-color ease-in;
-
-            &:hover{   
-                color: $secondary-color;
-                // background-color: $main-bg-color;
-                background-color: $main-bg-color;
-                text-decoration: none;
-                transition: 0.2s background-color ease-in;
-            }
-
-        }
-
-        #connection-button{
-            font-weight: bold;
-            color: $secondary-color;
-
-            &:hover{
-                // color: $main-color;
-                background-color: $main-bg-color;
-            }
-        }
-
-        #inscription-button{
-            font-weight: bold;
-            color: $main-bg-color;
-            background-color: $secondary-color;
-
-            &:hover{
-                color: $secondary-color;
-                background-color: $main-bg-color;
-            }
-        }
-
-    }
-
 }
