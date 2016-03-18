@@ -4,7 +4,9 @@
   <%= @farm.zipcode %> <%= @farm.city %>
 </p>
 <p><%= link_to @farm.owner, @farm.owner %></p>
-<%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
+<% if can? :manage, @farm or (current_user.present? and @farm.owner_id == current_user.id) %>
+    <%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
+<% end %>
 
 <h2>Produits</h2>
 <div class="row">
