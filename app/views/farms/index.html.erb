@@ -1,30 +1,49 @@
-<h1>Fermes</h1>
-<%= link_to 'New Farm', new_farm_path, class: 'btn btn-default' %>
+<section id='result_section' class="container-fluid">
+	<div class='row'>
+		<nav class='col-md-2 col-sm-3 menu-filter'>
+			<div class='filter-section'>
+				<p class="filter-section-title">Catégories</p>
+				<label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
+				<label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
+				<label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
+				<label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
+			</div>
+			<div class='filter-section'>
+				<p class="filter-section-title">Trier Par</p>
+				<label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
+				<label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
+			</div>
+			<div class='filter-section'>
+				<form class='form-inline'>
+					<input type='text' placeholder="Produits..." class='recherche_nav form-control'>
+					<span class='input-group-btn'>
+						<input type='submit' class='btn btn-default' value=''>
+					</span>
+				</form>
+			</div>
+		</nav>
+		<div class='col-md-10 results'>
+			<form class='form-inline row'>
+				<div class='input-group col-md-6 col-md-offset-3'>
+					<input type="text" placeholder="Ville, département..." class="form-control">
+					<span class='input-group-btn'>
+						<input type="submit" class="recherche btn btn-default" value=''>
+					</span>
+				</div>
+			</form>	
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Zipcode</th>
-      <th>City</th>
-      <th>Owner</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @farms.each do |farm| %>
-      <tr>
-        <td><%= link_to farm, farm %></td>
-        <td><%= farm.address %></td>
-        <td><%= farm.zipcode %></td>
-        <td><%= farm.city %></td>
-        <td><%= link_to farm.owner, farm.owner %></td>
-        <td>
-          <%= link_to 'Edit', edit_farm_path(farm), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+			<div class='recherche-out row'>
+				<% @farms.each do |farm| %>
+					<%= link_to(farm) do %>
+						<div class="col-md-3">
+							<div class="item_boutique">
+								<div class="item-boutique-title"><%= farm.name %></div>
+								<div class="item-boutique-address"><%= farm.address %>&nbsp;<%= farm.zipcode %>&nbsp;<%= farm.city %></div>
+							</div>
+						</div>
+					<% end %>
+			<% end %>	
+			</div>
+		</div>
+	</div>
+</section>
