@@ -20,7 +20,11 @@ class FarmsController < ApplicationController
   # GET /farms
   # GET /farms.json
   def index
-    @farms = Farm.all
+    if params.has_key?(:location)
+      @farms = Farm.where(:zipcode => params[:location])
+    else
+      @farms = Farm.all
+    end
   end
 
   # GET /farms/1
