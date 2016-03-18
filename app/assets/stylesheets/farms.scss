@@ -6,9 +6,10 @@
 	.menu-filter {
 		.filter-section {
 			background-color: $secondary-bg-color;
-			padding:20px 10px;
+			padding:20px 15px;
 			border-radius: 5px;
 			margin-bottom: 20px;
+			
 			.filter-section-title {
 				text-align: center;
 				font-weight: 300;
@@ -18,7 +19,8 @@
 
 			.filter {
 				display: block;
-				font-weight: normal;
+				font-weight: 200;
+				font-size: 1.1em;
 
 				input[type="checkbox"] {
 					margin:0 10px;
@@ -28,12 +30,39 @@
 			input[type="text"]{
 				width: 81%;
 				height: 30px;
+				display: inline;
+			}
+			input[type="submit"]{
+				background-image: image-url('icones/tool.png');
+				background-size: 60%;
+				background-repeat: no-repeat; 
+				background-position: center;
+			}
+			ul {
+				padding-left: 0;
+				li {
+					list-style: none;
+					font-size:.1.1em;
+					font-weight: 200;
+					padding: 5px 0;
+				}
+			}
+			.description {
+				border-top: 1px solid grey;
+				font-size: 0.9em; 
+				font-weight: 200;
+				margin-top: 15px;
+				padding-top: 15px;
 			}
 			
+
 		}		
 		form {
+			recherche_nav {
+				display: inline;
+			}
 			.input-group-btn, .input-group-btn input {
-				display: inline-block;
+				display: inline;
 				max-width: 20%;
 				height: 30px;
 				margin-left:-5px;				
@@ -52,6 +81,10 @@
 			}				
 			input[type="submit"]{
 				height: 30px;
+				background-image: image-url('icones/tool.png');
+				background-size: 60%;
+				background-repeat: no-repeat; 
+				background-position: center;
 			}	
 		}
 			
@@ -71,6 +104,10 @@
 	.results {
 		h2 {
 			margin-top:0;
+			margin-bottom :40px;
+			font-size: 3em;
+			font-weight: 300;
+			letter-spacing: 3px;
 		}
 		.form-inline {
 				

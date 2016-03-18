@@ -1,6 +1,6 @@
 <section id='farm_section' class="container-fluid">
 	<div class='row'>
-		<nav class='col-md-2 col-sm-3 menu-filter'>
+		<nav class='col-sm-3 menu-filter text-center-xs'>
 			<div class='filter-section'>
 				<p class="filter-section-title">Catégories</p>
 				<label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
@@ -9,21 +9,40 @@
 				<label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
 			</div>
 			<div class='filter-section'>
-				<p class="filter-section-title">Trier Par</p>
-				<label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
-				<label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
-			</div>
-			<div class='filter-section'>
 				<form class='form-inline'>
 					<input type='text' placeholder="Produits..." class='recherche_nav form-control'>
-					<span class='input-group-btn'>
+					<span class='search-button input-group-btn'>
 						<input type='submit' class='btn btn-default' value=''>
 					</span>
 				</form>
 			</div>
+			<div class='filter-section'>
+				<p class="filter-section-title">Informations  magasin</p>
+				<ul>
+					<li><%= @farm.name %></li>
+					<li><%= @farm.address %>&nbsp;<%= @farm.zipcode %>&nbsp;<%= @farm.city %></li>
+					<li>Téléphone du magasin</li>
+					<li class='description'>Courte description du magasin, cette ferme de test est vraiment utile et permet d'acheter des pâtes</li>
+				</ul>
+			</div>			
+			<div class='filter-section'>
+				<p class="filter-section-title">Propriétaire du magasin</p>
+				<ul>
+					<!--Si le fermier a spécifié qu'il souhaité renseigné tel ou tel information on les affiche -->
+					<li>Civilité+Prénom+Nom</li>
+					<li>Ville d'origine</li>
+					<li>Numéro de téléphone</li>
+					<li>Addresse e-mail</li>
+				</ul>
+			</div>
 		</nav>
-		<div class='col-md-10 results'>
-			<div class="row">
+		<div class='col-sm-9 results'>
+			<div class="row section-title-container">
+				<!--Si il y a une image de fond enregistrer pour cette ferme
+					- On la met en fond d'écran 
+					- On met un écran noir par dessus
+					- On met le titre en blanc
+				-->
 				<h2 class='text-center'><%= @farm %></h2>
 			</div>
 			<div class="row">
@@ -40,12 +59,10 @@
 
 
 <p>
-  <%= @farm.address %><br/>
-  <%= @farm.zipcode %> <%= @farm.city %>
+  <br/>
+  
 </p>
-<p><%= link_to @farm.owner, @farm.owner %></p>
+<p></p>
 <% if can? :manage, @farm or (current_user.present? and @farm.owner_id == current_user.id) %>
     <%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
 <% end %>
-
-<h2>Produits</h2>
