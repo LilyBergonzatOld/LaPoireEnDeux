@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'team' => 'static_pages#team'
   get 'contact' => 'static_pages#contact'
   get 'concept' => 'static_pages#concept'
+  get 'wip' => 'static_pages#wip'
 
   resources :products
   resources :users

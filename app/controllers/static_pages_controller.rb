@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def concept
   end
+	
+  def wip
+  end
 end
