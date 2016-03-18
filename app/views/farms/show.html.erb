@@ -1,4 +1,44 @@
-<h1><%= @farm %></h1>
+<section id='farm_section' class="container-fluid">
+	<div class='row'>
+		<nav class='col-md-2 col-sm-3 menu-filter'>
+			<div class='filter-section'>
+				<p class="filter-section-title">Catégories</p>
+				<label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
+				<label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
+				<label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
+				<label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
+			</div>
+			<div class='filter-section'>
+				<p class="filter-section-title">Trier Par</p>
+				<label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
+				<label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
+			</div>
+			<div class='filter-section'>
+				<form class='form-inline'>
+					<input type='text' placeholder="Produits..." class='recherche_nav form-control'>
+					<span class='input-group-btn'>
+						<input type='submit' class='btn btn-default' value=''>
+					</span>
+				</form>
+			</div>
+		</nav>
+		<div class='col-md-10 results'>
+			<div class="row">
+				<h2 class='text-center'><%= @farm %></h2>
+			</div>
+			<div class="row">
+  				<% @farm.products.each do |product| %>
+				<div class="col-md-3">
+					<%= render 'products/product', product: product %>
+				</div>
+  				<% end %>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
 <p>
   <%= @farm.address %><br/>
   <%= @farm.zipcode %> <%= @farm.city %>
@@ -9,10 +49,3 @@
 <% end %>
 
 <h2>Produits</h2>
-<div class="row">
-  <% @farm.products.each do |product| %>
-    <div class="col-md-3">
-      <%= render 'products/product', product: product %>
-    </div>
-  <% end %>
-</div>

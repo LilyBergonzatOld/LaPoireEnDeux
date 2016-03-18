@@ -6,13 +6,14 @@
 	.menu-filter {
 		background-color: gainsboro;
 		padding:20px 25px;
+		border-radius: 5px;
 		
 		.filter-section {
 			
 			.filter-section-title {
 				text-align: center;
 				font-weight: bold;
-			}	
+			}
 
 			.filter {
 				display: block;
@@ -60,7 +61,7 @@
 	.results {
 		.form-inline {
 				
-			margin:20px 0;
+			margin:0 0 20px 0;
 				
 			input[type="text"]{				
 				height: 30px;
@@ -68,7 +69,90 @@
 			input[type="submit"]{
 				height: 30px;
 			}	
+		}
+			
+		.recherche-out {
+			margin-top: 20px;
 				
+			.item_boutique {
+				width: 200px; height: 200px;
+				border: 1px solid black;
+				margin: 20px auto;
+			}					
+		}
+	}
+}
+
+#farm_section {
+	.menu-filter {
+		background-color: gainsboro;
+		padding:20px 25px;
+		border-radius: 5px;
+		
+		.filter-section {
+			
+			.filter-section-title {
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.filter {
+				display: block;
+				font-weight: normal;
+
+				input[type="checkbox"] {
+					margin:0 10px;
+				}			
+			}
+			
+			input[type="text"]{
+				width: 81%;
+				height: 30px;
+			}
+			
+		}
+		
+		.filter-section:nth-child(2)::before {
+			content:'';
+			width: 80%;
+			height: 3px; 
+			display: block;
+			margin: 20px auto;
+			background-color:#fe5465;
+		}
+		
+		.filter-section:nth-child(2)::after {
+			content:'';
+			width: 80%;
+			height: 3px; 
+			display: block;
+			margin: 20px auto;
+			background-color:#fe5465;
+		}
+		
+		form {
+			.input-group-btn, .input-group-btn input {
+				display: inline-block;
+				max-width: 20%;
+				height: 30px;
+				margin-left:-5px;				
+			}
+		}
+	}
+	.results {
+		h2 {
+			margin-top:0;
+		}
+		.form-inline {
+				
+			margin:0 0 20px 0;
+				
+			input[type="text"]{				
+				height: 30px;
+			}				
+			input[type="submit"]{
+				height: 30px;
+			}	
 		}
 			
 		.recherche-out {

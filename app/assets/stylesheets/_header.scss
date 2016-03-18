@@ -16,6 +16,9 @@
 		.navbar-header {
 			margin: 15px;
 		}
+		.nav li a{
+			padding:10px;
+		}
 		.nav li:hover {
 			background-color : $main-color;
 		}
