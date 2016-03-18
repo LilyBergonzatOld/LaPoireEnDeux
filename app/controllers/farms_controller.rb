@@ -13,6 +13,8 @@
 #
 
 class FarmsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   # GET /farms
