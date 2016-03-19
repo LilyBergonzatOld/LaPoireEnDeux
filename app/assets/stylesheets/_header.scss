@@ -17,10 +17,14 @@
 	#navbar {
 		margin-top: 15px;
 		
-
+		.inscription-button {
+			color:$secondary-color;
+		}
+		
 		.nav li a{
 			padding:10px;
 			background-color : $main-bg-color;
+			text-transform: uppercase    ;
 		}
 		.nav li:hover {
 			background-color : $main-color;

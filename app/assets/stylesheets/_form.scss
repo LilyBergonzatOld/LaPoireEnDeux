@@ -1,0 +1,29 @@
+.form-connexion {
+	margin-bottom: 30px;
+	.title {
+		text-transform: uppercase;
+		font-weight: 300;
+		letter-spacing: 3px;
+		margin-bottom: 40px;
+		font-size: 1.5em;
+	}
+	
+	.form-group {
+		margin-bottom: 20px;
+		label {
+			font-weight: normal;
+			font-size: 1.05em;
+		}
+		input[type="text"], input[type="email"], input[type="password"]{
+			background-color:$secondary-bg-color;
+		}
+	}
+	input[type="submit"] {
+		color:$secondary-color;
+		text-transform: uppercase; 
+		font-weight: 300; 
+		letter-spacing: 1px;
+		margin-bottom: 20px;
+	}
+
+}
