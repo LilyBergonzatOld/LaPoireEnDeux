@@ -32,4 +32,12 @@ class User < ActiveRecord::Base
   def to_s
     "#{nickname}"
   end
+
+  def admin
+    status == 'admin'
+  end
+
+  def user
+    status == 'user'
+  end
 end
