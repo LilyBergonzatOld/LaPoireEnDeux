@@ -1,6 +1,6 @@
 <div class="form-connexion row">
 	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-		<h2>Editer <%= resource_name.to_s.humanize %></h2>
+		<h2>Editer Profil</h2>
 
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
 			<%= f.error_notification %>
@@ -17,13 +17,13 @@
 				<%= f.input :current_password, hint: "Renseignez votre mot de passe actuel pour confirmer les changements", required: true %>
 
 
-				<%= f.input :email, required: true, autofocus: true %>
-				<%= f.input :first_name, required: true, autofocus: true %>
-				<%= f.input :last_name, required: true, autofocus: true %>
+				<%= f.input :email, required: true, autofocus: true, label: "E-mail" %>
+				<%= f.input :first_name, required: true, autofocus: true, label: "Prénom" %>
+				<%= f.input :last_name, required: true, autofocus: true, label: "Nom" %>
 
-				<%= f.input :address, required: true, autofocus: true %>
-				<%= f.input :zipcode, required: true, autofocus: true %>
-				<%= f.input :city, required: true, autofocus: true %>
+				<%= f.input :address, required: true, autofocus: true, label: "Adresse" %>
+				<%= f.input :zipcode, required: true, autofocus: true, label: "Code Postal" %>
+				<%= f.input :city, required: true, autofocus: true, label: "Ville" %>
 			</div>
 
 			<div class="form-actions">

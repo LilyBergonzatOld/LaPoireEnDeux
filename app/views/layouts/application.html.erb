@@ -1,91 +1,107 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>La Poire En Deux</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-</head>
-<body>
-<header class="navbar navbar-default navbar-static-top" id='header'>
-    <div class="container-fluid">
-		<div class="navbar-header">
-			<div class='navbar-brand'>
-				<h1><%= link_to image_tag("logo-horizontal.png", {class:'header-titre', alt:'La poire en deux'}), root_path %></h1>
-			</div>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  </head>
+  <body>
+    <header class="navbar navbar-default navbar-static-top" id='header'>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class='navbar-brand'>
+            <h1><%= link_to image_tag("logo-horizontal.png", {class:'header-titre', alt:'La Poire en Deux'}), root_path %></h1>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li class="active"><%= link_to 'Accueil', root_path, {class: 'text-center'} %></li>
-				<li><%= link_to 'Fermes', farms_path, {class: 'text-center'} %></li>
-                <% if signed_in? %>
-				<li class='dropdown'>
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Mon Compte <b class="caret"></b></a>
-					<ul class='dropdown-menu'>
-						<li><%= link_to 'Editer mon profil', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
-						
-						<!-- Le chemin est faux mais je ne le connais pas-->
-						<li><%= link_to 'Mes fermes', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
-						<li><%= link_to 'Mes produits', products_path, {class: 'text-center item-compte'} %></li>
-						<li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: 'text-center item-compte' %></li>
-					</ul>
-				</li>
-                <% else %>
-				<li><%= link_to "Connexion", new_user_session_path, {class: 'text-center'} %></li>
-				    <li><%= link_to "Inscription", new_user_registration_path, class: 'text-center connexion-button' %></li>
-                <% end %>
-				<li>
-					<%= link_to shopping_cart_path, class:'header-panier' do %>
-					<div class='text-center'><%= image_tag "panier.png" %>
-					<p class="text-center price"><%= number_to_currency @shopping_cart.total %></p></div>
-					<% end %>
-				</li>
-            </ul>
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to 'Accueil', root_path, {class: 'text-center'} %></li>
+            <li><%= link_to 'Fermes', farms_path, {class: 'text-center'} %></li>
+            <% if signed_in? %>
+            <% if %>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Admin
+                <b class="caret"></b>
+              </a>
+              <ul class='dropdown-menu'>
+                <li><%= link_to 'Utilisateurs', users_path, {class: 'text-center item-compte'} %></li>
+                <!-- Le chemin est faux mais je ne le connais pas-->
+                <li><%= link_to 'Boutiques', farms_path, {class: 'text-center item-compte'} %></li>
+              </ul>
+            </li>
+            <% end %>
+            <li class='dropdown'>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Mon Compte
+                <b class="caret"></b>
+              </a>
+              <ul class='dropdown-menu'>
+                <li><%= link_to 'Editer mon profil', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
+                <!-- Le chemin est faux mais je ne le connais pas-->
+                <li><%= link_to 'Mes fermes', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
+                <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: 'text-center item-compte' %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Connexion", new_user_session_path, {class: 'text-center'} %></li>
+            <li><%= link_to "Inscription", new_user_registration_path, class: 'text-center connexion-button' %></li>
+            <% end %>
+            <li>
+              <%= link_to shopping_cart_path, class:'header-panier' do %>
+              <div class='text-center'><%= image_tag "panier.png" %>
+                <p class="text-center price"><%= number_to_currency @shopping_cart.total %></p>
+              </div>
+              <% end %>
+            </li>
+          </ul>
         </div>
+      </div>
+    </header>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
+      <%= yield %>
     </div>
-</header>
-<div class="container">
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
-    <%= yield %>
-</div>
-<footer>
-	<div class='container'>
-		<div class='row'>
-			<div class='a_propos col-sm-3 text-center-xs'>
-				<p class="footer_title">A PROPOS</p>
-				<ul>
-					<li><%= link_to 'Qui sommes nous ?', wip_path, {class: 'text-center'} %></li>
-					<li><%= link_to 'Mentions légales', wip_path, {class: 'text-center'} %></li>
-					<li><%= link_to 'Sécurité et vie privé', wip_path, {class: 'text-center'} %></li>
-				</ul>
-			</div>
-			<div class='reseaux col-sm-3 col-xs-12 col-sm-offset-1 text-center-xs'>
-				<p class="footer_title">RÉSEAUX SOCIAUX</p>
-				<ul>
-					<li><a href=''><span class='social_logo'></span>Lien vers Facebook</a></li>
-<!--					<li><a href=''><span class='social_logo'></span>Lien vers Twitter</a></li>-->
-					<li>D'autres réseaux sociaux suivront...</li>
-				</ul>
-			</div>
-			<div class='contact col-sm-3 col-xs-12 col-sm-offset-1 text-center-xs'>
-				<p class="footer_title">CONTACTEZ-NOUS</p> 
-				<p>Joignez-nous par email : contact@lapoireendeux.fr</p>
-				<p>Par téléphone : 06 98 73 93 82</p>
-				<%= link_to 'Remplissez notre formulaire', wip_path, {class: 'text-center'} %>
-			</div>
-		</div>
-		<div class="row">
-			<p class="copyright col-md-6 col-md-offset-3 text-center-xs">Copyright © La Poire en Deux - 2016</p>
-		</div>
-	</div>
+    <footer>
+      <div class='container'>
+        <div class='row'>
+          <div class='a_propos col-sm-3 text-center-xs'>
+            <p class="footer_title">A PROPOS</p>
+            <ul>
+              <li><%= link_to 'Qui sommes nous ?', wip_path, {class: 'text-center'} %></li>
+              <li><%= link_to 'Mentions légales', wip_path, {class: 'text-center'} %></li>
+              <li><%= link_to 'Sécurité et vie privé', wip_path, {class: 'text-center'} %></li>
+            </ul>
+          </div>
+          <div class='reseaux col-sm-3 col-xs-12 col-sm-offset-1 text-center-xs'>
+            <p class="footer_title">RÉSEAUX SOCIAUX</p>
+            <ul>
+              <li>
+                <a href=''>
+                  <span class='social_logo'></span>Lien vers Facebook</a>
+              </li>
+              <!--					<li><a href=''><span class='social_logo'></span>Lien vers Twitter</a></li>-->
+              <li>D'autres réseaux sociaux suivront...</li>
+            </ul>
+          </div>
+          <div class='contact col-sm-3 col-xs-12 col-sm-offset-1 text-center-xs'>
+            <p class="footer_title">CONTACTEZ-NOUS</p>
+            <p>Joignez-nous par email : contact@lapoireendeux.fr</p>
+            <p>Par téléphone : 06 98 73 93 82</p>
+            <%= link_to 'Remplissez notre formulaire', wip_path, {class: 'text-center'} %>
+          </div>
+        </div>
+        <div class="row">
+          <p class="copyright col-md-6 col-md-offset-3 text-center-xs">Copyright © La Poire en Deux - 2016</p>
+        </div>
+      </div>
 
-</footer>
-</body>
+    </footer>
+  </body>
 </html>
