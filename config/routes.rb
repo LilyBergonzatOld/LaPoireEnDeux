@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'concept' => 'static_pages#concept'
   get 'wip' => 'static_pages#wip'
+  get 'users/farms' => 'farms#index', :defaults => { :from_user => true }, as: :user_farms
 
   resources :products
   resources :users

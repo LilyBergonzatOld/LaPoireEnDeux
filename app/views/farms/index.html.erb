@@ -1,49 +1,53 @@
 <section id='result_section' class="container-fluid">
-	<div class='row'>
-		<nav class='col-sm-3 col-xs-12 text-center-xs menu-filter'>
-			<div class='filter-section'>
-				<p class="filter-section-title">Catégories</p>
-				<label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
-				<label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
-				<label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
-				<label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
-			</div>
-			<div class='filter-section'>
-				<p class="filter-section-title">Trier Par</p>
-				<label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
-				<label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
-			</div>
-			<div class='filter-section'>
-				<form class='form-inline'>
-					<input type='text' placeholder="Produits..." class='recherche_nav form-control'>
+    <div class='row'>
+        <% unless @from_user %>
+            <nav class='col-sm-3 col-xs-12 text-center-xs menu-filter'>
+                <div class='filter-section'>
+                    <p class="filter-section-title">Catégories</p>
+                    <label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
+                    <label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
+                    <label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
+                    <label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
+                </div>
+                <div class='filter-section'>
+                    <p class="filter-section-title">Trier Par</p>
+                    <label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
+                    <label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
+                </div>
+                <div class='filter-section'>
+                    <form class='form-inline'>
+                        <input type='text' placeholder="Produits..." class='recherche_nav form-control'>
 					<span class='input-group-btn search-button'>
 						<input type='submit' class='btn btn-default' value=''>
 					</span>
-				</form>
-			</div>
-		</nav>
-		<div class='col-sm-9 results'>
-			<form class='form-inline row'>
-				<div class='input-group col-md-6 col-md-offset-3'>
-					<input type="text" placeholder="Ville, département..." class="form-control">
+                    </form>
+                </div>
+            </nav>
+        <% end %>
+        <div class='col-sm-9 results'>
+            <% unless @from_user %>
+                <form class='form-inline row'>
+                    <div class='input-group col-md-6 col-md-offset-3'>
+                        <input type="text" placeholder="Ville, département..." class="form-control">
 					<span class='input-group-btn search-button'>
 						<input type="submit" class="btn btn-default" value=''>
 					</span>
-				</div>
-			</form>	
+                    </div>
+                </form>
+            <% end %>
 
-			<div class='recherche-out row'>
-				<% @farms.each do |farm| %>
-					<%= link_to(farm) do %>
-						<div class="col-md-3">
-							<div class="item_boutique" style='background-image:url()'>
-								<div class="item-boutique-title"><%= farm.name %></div>
-								<div class="item-boutique-address"><%= farm.address %>&nbsp;<%= farm.zipcode %>&nbsp;<%= farm.city %></div>
-							</div>
-						</div>
-					<% end %>
-				<% end %>	
-			</div>
-		</div>
-	</div>
+            <div class='recherche-out row'>
+                <% @farms.each do |farm| %>
+                    <%= link_to(farm) do %>
+                        <div class="col-md-3">
+                            <div class="item_boutique" style='background-image:none'>
+                                <div class="item-boutique-title"><%= farm.name %></div>
+                                <div class="item-boutique-address"><%= farm.address %>&nbsp;<%= farm.zipcode %>&nbsp;<%= farm.city %></div>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </section>

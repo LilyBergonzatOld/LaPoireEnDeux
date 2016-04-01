@@ -20,10 +20,17 @@ class FarmsController < ApplicationController
   # GET /farms
   # GET /farms.json
   def index
-    if params.has_key?(:location)
-      @farms = Farm.where(:zipcode => params[:location])
+    if params.has_key?(:from_user) && params[:from_user] == true && signed_in?
+      @farms = current_user.farms
+      @from_user = true
     else
-      @farms = Farm.all
+      @from_user = false
+
+      if params.has_key?(:location)
+        @farms = Farm.where(:zipcode => params[:location])
+      else
+        @farms = Farm.all
+      end
     end
   end
 
@@ -82,13 +89,13 @@ class FarmsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_farm
-      @farm = Farm.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_farm
+    @farm = Farm.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def farm_params
-      params.require(:farm).permit(:name, :address, :zipcode, :city, :owner_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def farm_params
+    params.require(:farm).permit(:name, :address, :zipcode, :city, :owner_id)
+  end
 end

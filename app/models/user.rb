@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :validatable, :authentication_keys => [:nickname]
 
-  has_many :farms
+  has_many :farms, foreign_key: 'owner_id'
   enum status: [ :user, :admin ]
   
   def to_s
