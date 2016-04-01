@@ -28,7 +28,10 @@
 				<li class='dropdown'>
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#">Mon Compte <b class="caret"></b></a>
 					<ul class='dropdown-menu'>
-						<li><%= link_to current_user.nickname, edit_user_registration_path, {class: 'text-center item-compte'} %></li>
+						<li><%= link_to 'Editer mon profil', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
+						
+						<!-- Le chemin est faux mais je ne le connais pas-->
+						<li><%= link_to 'Mes fermes', edit_user_registration_path, {class: 'text-center item-compte'} %></li>
 						<li><%= link_to 'Mes produits', products_path, {class: 'text-center item-compte'} %></li>
 						<li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: 'text-center item-compte' %></li>
 					</ul>

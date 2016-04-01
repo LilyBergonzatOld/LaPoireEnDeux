@@ -1,12 +1,12 @@
 <h1>Produits</h1>
-<%= link_to 'New Product', new_product_path, class: 'btn btn-default' %>
+<%= link_to 'Ajouter un produit', new_product_path, class: 'btn btn-default' %>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Farm</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Numéro de ferme</th>
       <th></th>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
         <td><%= product.price %></td>
         <td><%= product.farm_id %></td>
         <td>
-          <%= link_to 'Add to cart', shopping_cart_path(product_id: product.id), :method => 'POST' , class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-primary btn-sm' %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+			<%= link_to 'Ajouter au panier', shopping_cart_path(product_id: product.id), :method => 'POST' , class: 'btn btn-primary btn-sm' %>
+			<%= link_to 'Editer produit', edit_product_path(product), class: 'btn btn-primary btn-sm' %>
+			<%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm' %>
         </td>
       </tr>
     <% end %>

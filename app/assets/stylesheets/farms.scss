@@ -72,10 +72,8 @@
 }
 #result_section {
 	.results {
-		.form-inline {
-				
+		.form-inline {	
 			margin:0 0 20px 0;
-				
 			input[type="text"]{				
 				height: 30px;
 			}				
@@ -87,10 +85,9 @@
 				background-position: center;
 			}	
 		}
-			
 		.recherche-out {
 			margin-top: 20px;
-				
+			
 			.item_boutique {
 				width: 200px; height: 200px;
 				border: 1px solid black;
