@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
          :validatable, :authentication_keys => [:nickname]
 
   has_many :farms
+  enum status: [ :user, :admin ]
   
   def to_s
     "#{nickname}"
