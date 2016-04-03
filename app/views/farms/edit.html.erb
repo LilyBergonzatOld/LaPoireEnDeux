@@ -1,6 +1,8 @@
-<h1>Editing Farm</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @farm %> |
-<%= link_to 'Back', farms_path %>
+<div class="form-connexion row">
+	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		<h2 class="text-center title">Editer votre ferme</h2>
+      <%= render 'form' %>
+      <%= link_to 'Aperçu', @farm %> |
+      <%= link_to 'Retour à la liste des fermes', user_farms_path %>
+	</div>
+</div>
