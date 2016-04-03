@@ -9,12 +9,12 @@
 			padding:20px 15px;
 			border-radius: 5px;
 			margin-bottom: 20px;
-			
+
 			.filter-section-title {
 				text-align: center;
 				font-weight: 300;
 				text-transform: uppercase;
-				color: $main-color; 
+				color: $main-color;
 			}
 
 			.filter {
@@ -24,9 +24,9 @@
 
 				input[type="checkbox"] {
 					margin:0 10px;
-				}			
+				}
 			}
-			
+
 			input[type="text"]{
 				width: 81%;
 				height: 30px;
@@ -35,7 +35,7 @@
 			input[type="submit"]{
 				background-image: image-url('icones/tool.png');
 				background-size: 60%;
-				background-repeat: no-repeat; 
+				background-repeat: no-repeat;
 				background-position: center;
 			}
 			ul {
@@ -49,14 +49,14 @@
 			}
 			.description {
 				border-top: 1px solid grey;
-				font-size: 0.9em; 
+				font-size: 0.9em;
 				font-weight: 200;
 				margin-top: 15px;
 				padding-top: 15px;
 			}
-			
 
-		}		
+
+		}
 		form {
 			recherche_nav {
 				display: inline;
@@ -65,34 +65,51 @@
 				display: inline;
 				max-width: 20%;
 				height: 30px;
-				margin-left:-5px;				
+				margin-left:-5px;
 			}
 		}
 	}
 }
 #result_section {
 	.results {
-		.form-inline {	
+		.form-inline {
 			margin:0 0 20px 0;
-			input[type="text"]{				
+			input[type="text"]{
 				height: 30px;
-			}				
+			}
 			input[type="submit"]{
 				height: 30px;
 				background-image: image-url('icones/tool.png');
 				background-size: 60%;
-				background-repeat: no-repeat; 
+				background-repeat: no-repeat;
 				background-position: center;
-			}	
+			}
 		}
 		.recherche-out {
 			margin-top: 20px;
-			
+
 			.item_boutique {
 				width: 200px; height: 200px;
 				border: 1px solid black;
 				margin: 20px auto;
-			}					
+			}
+			.new_farm {
+				border-radius: 10px;
+				border: 1px solid transparent;
+				background-color:$secondary-bg-color;
+				color:#888;
+				font-size: 75px;
+				padding-top:20%;
+				text-align: center;
+			}
+			.new_farm:hover {
+				color:black;
+				border: 1px solid #888;
+				-webkit-transition: .1s all ease-in;
+				-moz-transition: .1s all ease-in;
+				-o-transition: .1s all ease-in;
+				transition: .1s all ease-in;
+			}
 		}
 	}
 }
@@ -107,25 +124,25 @@
 			letter-spacing: 3px;
 		}
 		.form-inline {
-				
+
 			margin:0 0 20px 0;
-				
-			input[type="text"]{				
+
+			input[type="text"]{
 				height: 30px;
-			}				
+			}
 			input[type="submit"]{
 				height: 30px;
-			}	
+			}
 		}
-			
+
 		.recherche-out {
 			margin-top: 20px;
-				
+
 			.item_boutique {
 				width: 200px; height: 200px;
 				border: 1px solid black;
 				margin: 20px auto;
-			}					
+			}
 		}
 	}
 }

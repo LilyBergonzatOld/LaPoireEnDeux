@@ -48,12 +48,13 @@
         <% end %>
         <% end %>
         <% if request.original_url=='http://localhost:3000/users/farms'%>
-        <%= link_to('farms/new') do %>
+        <%= link_to(farm_new_path) do %>
         <div class="col-md-3">
-          <div class="item_boutique" style='background-image:none'>
-            <div class="item-boutique-title">+</div>
+          <div class="item_boutique new_farm" style='background-image:none'>
+            +
           </div>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
