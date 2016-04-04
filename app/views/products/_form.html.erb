@@ -1,6 +1,11 @@
+
 <%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.association :farm %>
-  <%= f.button :submit %>
+<div class="form-inputs">
+  <%= f.input :name, :label =>'Nom produit' %>
+  <%= f.input :price, :label =>'Prix' %>
+  <%= f.association :farm, :label=> 'Ferme'%>
+</div>
+<div class="form-actions">
+  <%= f.button :submit, :value=>'Validez' %>
+</div>
 <% end %>
