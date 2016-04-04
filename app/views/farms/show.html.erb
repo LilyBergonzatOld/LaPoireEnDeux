@@ -24,12 +24,12 @@
 					<li>Téléphone du magasin</li>
 					<li class='description'>Courte description du magasin, cette ferme de test est vraiment utile et permet d'acheter des pâtes</li>
 				</ul>
-			</div>			
+			</div>
 			<div class='filter-section'>
 				<p class="filter-section-title">Propriétaire du magasin</p>
 				<ul>
 					<!--Si le fermier a spécifié qu'il souhaité renseigné tel ou tel information on les affiche -->
-					<li>Civilité+Prénom+Nom</li>
+					<li>Nom utilisateur</li>
 					<li>Ville d'origine</li>
 					<li>Numéro de téléphone</li>
 					<li>Addresse e-mail</li>
@@ -39,18 +39,25 @@
 		<div class='col-sm-9 results'>
 			<div class="row section-title-container">
 				<!--Si il y a une image de fond enregistrer pour cette ferme
-					- On la met en fond d'écran 
+					- On la met en fond d'écran
 					- On met un écran noir par dessus
 					- On met le titre en blanc
 				-->
 				<h2 class='text-center'><%= @farm %></h2>
 			</div>
-			<div class="row">
+			<div class="row result_products">
   				<% @farm.products.each do |product| %>
 				<div class="col-md-3">
 					<%= render 'products/product', product: product %>
 				</div>
   				<% end %>
+				<div class="col-md-3">
+					<%= link_to(new_product_path) do %>
+					<div class="new_product product">
+						+
+					</div>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -60,7 +67,7 @@
 
 <p>
   <br/>
-  
+
 </p>
 <p></p>
 <% if can? :manage, @farm or (current_user.present? and @farm.owner_id == current_user.id) %>

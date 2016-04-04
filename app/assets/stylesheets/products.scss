@@ -1,3 +1,110 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.result_products {
+  margin-top: 20px;
+  .product {
+    width: 200px;
+    background-image:url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color:rgb(227, 224, 255);
+    min-height: 200px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 5px;
+    .edit, .delete {
+      z-index: 999;
+      position: absolute;
+      height: 40px;
+      color: white;
+      border-top-right-radius: 5px;
+      display: none;
+    }
+    .edit {
+      right:0; top:0;
+      padding: 10px;
+      background-color: $main-color;
+    }
+    .delete {
+      right: 40%;
+      top: 40%;
+      width: 20%;
+      height: 20%;
+      border-radius: 100%;
+      padding: 0;
+      font-size: 25px;
+    }
+    .title{
+      font-size: 20px;
+      position: absolute;
+      top:0;
+      width: 200px;
+      height: 40px;
+      padding: 7px 10px;
+      background-color: rgba(255,255,255,0.8);
+      a {
+        color: black;
+      }
+    }
+    .market {
+      position: absolute;
+      bottom: 0;
+      min-height: 50px;
+      width: 200px;
+      .price {
+        height: 50px;
+        width: 90px;
+        text-align: center;
+        color: black;
+        padding: 10px 10px;
+        font-size: 20px;
+        margin: 0;
+        display: inline-block;
+        float: left;
+        background-color: $secondary-bg-color;
+        border-bottom-left-radius: 5px;
+      }
+      .add_panier {
+        height: 50px;
+        width: 110px;
+        color: white;
+        padding: 15px 10px;
+        display: inline-block;
+        float: right;
+        background-color: $secondary-color;
+        border : 0px;
+        border-radius:0;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+  .product:hover {
+    border: 1px solid black;
+    .edit, .delete {
+      display: block;
+    }
+  }
+  a {
+    text-decoration: none;
+    .new_product {
+      border-radius: 5px;
+      border: 1px solid transparent;
+      background-color: $secondary-bg-color;
+      color: #888;
+      font-size: 75px;
+      padding-top: 20%;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .new_product:hover {
+      color: black;
+      border: 1px solid #888;
+      -webkit-transition: 0.1s all ease-in;
+      -moz-transition: 0.1s all ease-in;
+      -o-transition: 0.1s all ease-in;
+      transition: 0.1s all ease-in;
+    }
+  }
+}
