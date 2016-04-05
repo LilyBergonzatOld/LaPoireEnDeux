@@ -1,55 +1,77 @@
-<h1>Panier</h1>
-<div class="row">
-  <div class="col-md-9">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Produit</th>
-          <th>Prix unitaire</th>
-          <th>Quantité</th>
-          <th>Prix total</th>
-          <th></th>
-        </tr>
-      </thead>
-    <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
-      <tr>
-        <td><%= link_to shopping_cart_item.item, shopping_cart_item.item %></td>
-        <td><%= number_to_currency shopping_cart_item.item.price %></td>
-        <td>
-          <%= link_to raw('<i class="glyphicon glyphicon-minus-sign"></i>'), 
-                shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -1), 
-                method: :post %>
-          <%= shopping_cart_item.quantity %>
-          <%= link_to raw('<i class="glyphicon glyphicon-plus-sign"></i>'), 
-                shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: 1), 
-                method: :post %>
-        </td>
-        <td><%= number_to_currency shopping_cart_item.subtotal %></td>
-        <td><%= link_to raw('<i class="glyphicon glyphicon-remove-sign"></i>'), 
-                  shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -shopping_cart_item.quantity), 
-                  method: :post %></td>
-      </tr>
-    <% end %>
-    </table>
+<section class="shoppingcart">
+  <h2>Mon panier</h2>
+  <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
+  <div class='row product'>
+    <img src='https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg' alt='' class='col-sm-4'/>
+    <div class="description col-sm-5">
+      <p class='title'><%= link_to shopping_cart_item.item, shopping_cart_item.item %></p>
+      <p class='price'><%= number_to_currency shopping_cart_item.item.price %></p>
+      <p class='farm-name col-xs-12'><%= shopping_cart_item.item.farm %></p>
+      <p class='details col-xs-12'>Vivamus eu interdum velit, id gravida elit. Duis sed arcu sit amet ligula malesuada lacinia ac ut nisl. Maecenas tempus ante eu nisl mattis, scelerisque auctor lectus lacinia. Mauris elementum sed lectus quis faucibus.
+        Curabitur eget tempus enim. Donec sed nibh lacus. Pellentesque tempor molestie viverra. Nullam venenatis massa id quam ultricies, non mollis orci elementum. Morbi suscipit et nisi vitae sodales. Integer quam risus, euismod quis mollis vitae, dapibus
+        eu metus. Praesent tristique, diam sed efficitur aliquam, lacus dolor condimentum neque, et condimentum mauris ligula at quam. In hac habitasse platea dictumst.</p>
+      <div class='remove col-xs-12'>
+        <%= link_to raw('Supprimer'), shopping_cart_path(product_id: shopping_cart_item.item.id , quantity: -shopping_cart_item.quantity), method: :post , class:'delete'%>
+      </div>
+    </div>
+    <div class="col-sm-3 cart">
+      <div class='row'>
+        <div class='total col-sm-12 col-xs-6'>
+          <span>Total :
+          </span>
+          <span class='price'><%= number_to_currency shopping_cart_item.subtotal %></span>
+        </div>
+        <div class='quantity col-sm-12 col-xs-6'>
+          <span>Quantité :</span>
+          <span><%= link_to raw('<i class="glyphicon glyphicon-minus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: -1), method: :post %>
+            <%= shopping_cart_item.quantity %>
+            <%= link_to raw('<i class="glyphicon glyphicon-plus-sign"></i>'), shopping_cart_path(product_id: shopping_cart_item.item.id, quantity: 1), method: :post %>
+          </span>
+        </div>
+        <div class="delivery col-sm-12">
+          <p>
+            <strong>Prix livraison</strong>
+          </p>
+          <p>Délai de traitement estimé :
+            <strong>XXX</strong>
+          </p>
+          <p>Délai de livraison :
+            <strong>XXX</strong>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-3">
-    <table class="table">
-      <tr>
-        <td>Nombre de produits</td>
-        <td><%= @shopping_cart.total_unique_items %></td>
-      </tr>
-      <tr>
-        <td>Total hors taxes</td>
-        <td><%= number_to_currency @shopping_cart.subtotal %></td>
-      </tr>
-      <tr>
-        <td>TVA</td>
-        <td><%= number_to_currency @shopping_cart.taxes %></td>
-      </tr>
-      <tr>
-        <td>Total TTC</td>
-        <td><%= number_to_currency @shopping_cart.total %></td>
-      </tr>
-    </table>
+  <% end %>
+  <div class='row paypal'>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-6 col-xs-12 total">
+      <p class="nb-article">Nombre d'article &nbsp
+        <span><%= @shopping_cart.total_unique_items %></span>
+      </p>
+      <p class="subtotal-price">Total hors taxe &nbsp<span><%= number_to_currency @shopping_cart.subtotal %></span>
+      </p>
+      <p class="taxe">TVA &nbsp<span><%= number_to_currency @shopping_cart.taxes %></span>
+      </p>
+      <p class="total-price">Total TTC &nbsp<span><%= number_to_currency @shopping_cart.total %></span>
+      </p>
+      <div class="payment-way">
+        <p>Mode de paiement</p>
+        <label>Paypal :
+          <input type='radio'></label>
+      </div>
+      <div class="delivery">
+        <p>
+          <strong>Prix livraison</strong>
+        </p>
+        <p>Délai de traitement estimé :
+          <strong>XXX</strong>
+        </p>
+        <p>Délai de livraison :
+          <strong>XXX</strong>
+        </p>
+      </div>
+      <%= link_to 'Passez commande', products_path , class: 'btn btn-primary btn-sm add_panier' %>
+    </div>
   </div>
-</div>
+</section>

@@ -24,11 +24,6 @@ a {
   &:visited {
     color: #666;
   }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 div {
@@ -72,8 +67,10 @@ div {
   }
 }
 
+
 @media screen and (max-width:500px){
-  .col-xs-6 {
-    width: 100%;
-  }
+
+    #result_section .col-xs-6, .result_products .col-xs-6{
+      width: 100%;
+    }
 }

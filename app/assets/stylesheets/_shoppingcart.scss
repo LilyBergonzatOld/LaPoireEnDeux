@@ -1,0 +1,216 @@
+.shoppingcart {
+  h2 {
+    text-transform: uppercase;
+    font-weight: thin;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+  }
+  .product {
+    border: 1px solid #cdcdcd;
+    padding: 50px 40px;
+    margin: 20px 0;
+    .description {
+      border-right: 1px solid grey;
+      .title {
+        display: inline-block;
+        padding-left: 15px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        color: #595959;
+        margin-top: 0;
+        float: left;
+        font-family:sans-serif;
+        font-size :25px;
+      }
+      .price {
+        display: inline-block;
+        margin-right: 35px;
+        font-family: sans-serif;
+        float:right;
+        color: $main-color;
+        font-size: 25px;
+      }
+      .farm-name {
+        color: #cdcdcd;
+        font-size: 17px;
+        font-weight: 100;
+      }
+      .details {
+        margin-top : 10px;
+        font-family: sans-serif;
+        font-size: 13px;
+        font-weight: 100;
+        margin-bottom: 25px;
+      }
+      .delete {
+        float: right;
+        margin-right: 35px;
+        color: #595959;
+        font-size: 15px;
+      }
+    }
+    .cart {
+      padding: 0 0 0 45px;
+      .total {
+        text-align: center;
+        margin-bottom: 35px;
+        span:first-child {
+          font-weight: 500;
+          font-family: sans-serif;
+        }
+        .price {
+          font-family: sans-serif;
+          padding: 5px 8px;
+          border: 1px solid grey;
+          color: $main-color;
+          font-size: 15px;
+        }
+      }
+      .quantity {
+        text-align: center;
+        margin-bottom: 45px;
+        span:first-child {
+          font-weight: 500;
+          font-family: sans-serif;
+        }
+        span:last-child {
+          padding: 5px 8px;
+          // border: 1px solid grey;
+        }
+      }
+      .delivery {
+        strong {
+          font-family: sans-serif;
+          font-weight: 500;
+          color: black;
+        }
+        p {
+          color: #595959;
+          font-weight: 100;
+          margin: 5px 0;
+        }
+        p:first-child {
+          text-align: center;
+          color: black;
+          margin-bottom: 10px;
+        }
+
+      }
+    }
+  }
+  .paypal {
+    padding: 0 15px;
+    .total {
+      border: 1px solid #cdcdcd;
+      padding: 20px 30px;
+      margin: 20px 0;
+      p {
+        text-align: center;
+        font-weight: 500;
+        font-family:sans-serif;
+        margin-bottom: 15px;
+      }
+      span {
+        font-weight: 200;
+        color: $main-color;
+      }
+      label {
+        font-weight: 200;
+        text-align: center;
+        display: block;
+        margin: auto;
+      }
+      strong {
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+      .total-price{
+        span {
+          padding: 5px 8px;
+          border: 1px solid grey;
+        }
+      }
+      .payment-way {
+        p {
+          margin-bottom: 0;
+        }
+        label {
+          margin-bottom: 10px;
+        }
+      }
+      .delivery {
+        p {
+          margin-bottom: 0;
+          font-weight: 200;
+        }
+        p:first-child {
+          margin-bottom: 7px;
+          font-weight: 500;
+        }
+      }
+      .add_panier {
+        background-color: $secondary-color;
+        margin: auto;
+        margin-top: 10px;
+        display: block;
+        color: white;
+        padding: 10px 20px;
+        border:0;
+        border-radius: 5px;
+        text-align: center;
+        &:hover {
+          background-color: rgb(136, 5, 40);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:768px) {
+  .shoppingcart {
+    img {
+      width: 50%;
+      margin: auto;
+      display: block;
+    }
+    .product {
+      padding: 20px 0;
+      .description {
+        .title, .price, .farm-name {
+          display: inline-block;
+          width: auto;
+        }
+        border-right: 0px solid grey;
+        margin-top: 20px ;
+        .delete {
+          margin-bottom: 20px;
+        }
+        &::after {
+          content:'';
+          height: 1px;
+          background-color:grey;
+          display: block;
+          clear: both;
+        }
+      }
+      .cart {
+        margin-top: 30px;
+        .row {
+          padding: 0 15px;
+        }
+        .total, .quantity {
+          padding-bottom:15px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid grey;
+        }
+        .quantity i {
+          border-radius: 0;
+        }
+        .delivery{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
