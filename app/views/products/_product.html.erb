@@ -1,15 +1,12 @@
-
-<article class="product">
+<article class="product" style='background-image:url(https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg)'>
   <%= link_to(product) do %>
   <%= link_to(edit_product_path(product)) do %><p class='edit'>Editer</p><% end %>
-  <%= link_to 'X', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>
+  <%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>
 
-  <div class="title">
-      <p><%= product %></h3>
-  </div>
-  <div class="market">
-    <p class="price"><%= number_to_currency product.price %></p>
-    <%= link_to 'Ajouter au panier', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
+  <div class="description">
+      <p class='title'><%= product %></h3>
+      <p class="price"><%= number_to_currency product.price %></p>
+      <%= link_to '', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
   </div>
   <% end %>
 </article>

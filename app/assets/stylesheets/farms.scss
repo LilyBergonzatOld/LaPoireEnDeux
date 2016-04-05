@@ -88,9 +88,32 @@
 			margin-top: 20px;
 
 			.item_boutique {
-				width: 200px; height: 200px;
-				border: 1px solid black;
+				width: 100%; min-height: 200px;
+				border: 1px solid grey;
 				margin: 20px auto;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				position : relative;
+				.description {
+					position: absolute;
+					bottom: 0;
+					min-height: 40px;
+					background-color: rgba(255,255,255,1);
+					width: 100%;
+					padding: 10px;
+					vertical-align: bottom;
+					.item-boutique-title {
+						color: black;
+						font-size: 15px;
+					}
+					.item-boutique-address{
+						color: grey;
+						text-transform: uppercase;
+						font-size: 12px;
+						margin-top: 4px;
+					}
+				}
 			}
 			.new_farm {
 				border-radius: 10px;
@@ -98,7 +121,7 @@
 				background-color:$secondary-bg-color;
 				color:#888;
 				font-size: 75px;
-				padding-top:20%;
+				padding-top:75px;
 				text-align: center;
 			}
 			.new_farm:hover {

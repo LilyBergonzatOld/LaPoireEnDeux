@@ -9,12 +9,12 @@ $main-title-font: 'Pacifico', cursive;
 $subtitle-font: 'Handlee', cursive;
 $sitewide-font: 'Maven Pro', sans-serif;
 
-@mixin transition($transition...){
-    transition: $transition;
-    -webkit-transition: $transition;
-    -moz-transition: $transition;
-    -ms-transition: $transition;
-    -o-transition: $transition;
+@mixin transition($transition) {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
 }
 
 #test {

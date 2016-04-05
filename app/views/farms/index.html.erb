@@ -24,7 +24,11 @@
       </div>
     </nav>
     <% end %>
-    <div class='col-sm-9 results'>
+    <% if @from_user %>
+      <div class='col-sm-12 results'>
+    <% else %>
+      <div class='col-sm-9 results'>
+    <% end %>
       <% unless @from_user %>
       <form class='form-inline row'>
         <div class='input-group col-md-6 col-md-offset-3'>
@@ -39,17 +43,19 @@
       <div class='recherche-out row'>
         <% @farms.each do |farm| %>
         <%= link_to(farm) do %>
-        <div class="col-md-3">
-          <div class="item_boutique" style='background-image:none'>
-            <div class="item-boutique-title"><%= farm.name %></div>
-            <div class="item-boutique-address"><%= farm.address %>&nbsp;<%= farm.zipcode %>&nbsp;<%= farm.city %></div>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+          <div class="item_boutique" style='background-image:url(http://www.ane-charlevoix.com/media/accueil/grand/photo_06.jpg)'>
+            <div class="description">
+              <div class="item-boutique-title"><%= farm.name %></div>
+              <div class="item-boutique-address"><%= farm.city %></div>
+            </div>
           </div>
         </div>
         <% end %>
         <% end %>
         <% if request.original_url=='http://localhost:3000/users/farms'%>
         <%= link_to(farm_new_path) do %>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-4 col-xs-6">
           <div class="item_boutique new_farm" style='background-image:none'>
             +
           </div>

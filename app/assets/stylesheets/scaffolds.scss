@@ -71,3 +71,9 @@ div {
     list-style: square;
   }
 }
+
+@media screen and (max-width:500px){
+  .col-xs-6 {
+    width: 100%;
+  }
+}
