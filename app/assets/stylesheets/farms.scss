@@ -2,30 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #result_section, #farm_section {
+	h2 {
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 3px;
+		font-weight: thin;
+	}
 	.menu-filter {
 		.filter-section {
 			background-color: $secondary-bg-color;
 			padding:20px 15px;
 			border-radius: 5px;
 			margin-bottom: 20px;
-
 			.filter-section-title {
 				text-align: center;
 				font-weight: 300;
 				text-transform: uppercase;
 				color: $main-color;
 			}
-
 			.filter {
 				display: block;
 				font-weight: 200;
 				font-size: 1.1em;
-
 				input[type="checkbox"] {
 					margin:0 10px;
 				}
 			}
-
 			input[type="text"]{
 				width: 81%;
 				height: 30px;
@@ -53,11 +55,9 @@
 				margin-top: 15px;
 				padding-top: 15px;
 			}
-
-
 		}
 		form {
-			recherche_nav {
+			.recherche_nav {
 				display: inline;
 			}
 			.input-group-btn, .input-group-btn input {
@@ -86,7 +86,6 @@
 		}
 		.recherche-out {
 			margin-top: 20px;
-
 			.item_boutique {
 				width: 100%; min-height: 200px;
 				border: 1px solid grey;
@@ -146,9 +145,7 @@
 			letter-spacing: 3px;
 		}
 		.form-inline {
-
 			margin:0 0 20px 0;
-
 			input[type="text"]{
 				height: 30px;
 			}
@@ -156,10 +153,8 @@
 				height: 30px;
 			}
 		}
-
 		.recherche-out {
 			margin-top: 20px;
-
 			.item_boutique {
 				width: 200px; height: 200px;
 				border: 1px solid black;

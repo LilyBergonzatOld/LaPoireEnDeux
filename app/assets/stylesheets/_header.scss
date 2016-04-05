@@ -1,52 +1,63 @@
 #header {
-	
-	background-color:$main-bg-color; 
-	height: 80px;
-	
-	h1, h2 {
-		margin:0;
-		img {
-			height: 50px;
-		}
-	}
-	.navbar-header {
-		button.navbar-toggle {
-			margin-top:20px;
-		}
-	}
-	#navbar {
-		margin-top: 15px;
-		
-		.inscription-button {
-			color:$secondary-color;
-		}
-		
-		.nav li a{
-			padding:10px;
-			background-color : $main-bg-color;
-			text-transform: uppercase    ;
-		}
-		.nav li:hover {
-			background-color : $main-color;
-		}
-		
-		.item-compte {
+  background-color: rgba(255,255,255,0.9);
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  h1,
+  h2 {
+    margin: 0;
+    img {
+      height: 50px;
+    }
+  }
+  .navbar-header {
+    button.navbar-toggle {
+      margin-top: 20px;
+    }
+  }
+  #navbar {
+    margin-top: 15px;
+    .inscription-button {
+      color: $secondary-color;
+    }
+    .nav li a {
 			text-align: right;
-			height: 30px;
-		}
-		
-		.header-panier {
-			
-			img {
-				height: 20px;
-				padding: 0;
-				margin-right: 10px;
-				display: inline-block;
-			}
-			
-			p {
-				display: inline-block;
-				margin: 0;
+      padding: 10px;
+      background-color: transparent;
+      text-transform: uppercase;
+    }
+    .nav li:hover {
+      background-color: transparent;
+    }
+    .item-compte {
+      text-align: right;
+      height: 30px;
+    }
+    .header-panier {
+      img {
+        height: 20px;
+        padding: 0;
+        margin-right: 10px;
+        display: inline-block;
+      }
+      p {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width:768px) {
+	#navbar {
+		margin-top: 17px;
+		width: auto;
+		float: right;
+		ul {
+			margin-top: 3px;
+			background-color: rgba(240,240,240,0.9);
+			&>li {
+				padding: 5px 30px;
 			}
 		}
 	}

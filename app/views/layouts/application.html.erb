@@ -54,7 +54,7 @@
                 <% end %>
                 <li>
                     <%= link_to shopping_cart_path, class: 'header-panier' do %>
-                        <div class='text-center'><%= image_tag "panier.png" %>
+                        <div class=''><%= image_tag "panier.png" %>
                             <p class="text-center price"><%= number_to_currency @shopping_cart.total %></p>
                         </div>
                     <% end %>
@@ -63,9 +63,12 @@
         </div>
     </div>
 </header>
-<div class="container">
+<% if request.original_url == request.base_url+'/' %>
+<div>
+<% else %>
+<div class='container'>
+<% end %>
     <p id="notice"><%= notice %></p>
-
     <p id="alert"><%= alert %></p>
     <%= yield %>
 </div>

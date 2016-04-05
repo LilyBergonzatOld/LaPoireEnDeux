@@ -4,14 +4,17 @@
 
 
 #presentation {
+    top: -10px;
+    position: relative;
     width: 100%;
-    background-image: asset-url("images/sitewide/home-bg/auvergne.jpg");
-    background-size: cover; 
+    height: 500px;
+    background-image: asset-url("sitewide/home-bg/auvergne.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
     .overlay{
-        min-height: 24vw;
+        min-height: 500px;
         max-width: 100%;
         width: 100%;
         background-color: rgba(0,0,0,0.5);
@@ -39,7 +42,7 @@
     }
 
     form.form-inline {
-        // margin-top : 50px; 
+        // margin-top : 50px;
     }
 
     input[type="text"]{
@@ -50,9 +53,9 @@
         width: 30px;
     }
     form .recherche{
-        background-image: url("/assets/images/icones/zoom.png");
+        background-image: asset-url("icones/zoom.png");
         background-color: $secondary-color;
-        background-size: cover; 
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 70%;
@@ -64,17 +67,19 @@
 }
 
 #boutique-selection{
-
+    // background-color: white;
     padding: 30px 0;
 
     .section-title {
         margin-top: 3%;
         margin-bottom: 2%;
-        font-family: $sitewide-font;
-        color : $secondary-color;
+        font-family: sans-serif;
+        font-weight: thin;
+        font-size: 20px;
+        letter-spacing: 3px;
+        color : black;
         text-transform: uppercase;
-        font-weight: bold;
-        font-size: 24px;
+
     }
 
     .item-boutique {
@@ -99,7 +104,7 @@
                 }
 
             }
-    
+
             .item-boutique-title {
                 width: 100%;
                 padding-top: 20px;
