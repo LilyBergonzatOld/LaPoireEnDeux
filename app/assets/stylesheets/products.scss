@@ -102,3 +102,62 @@
     }
   }
 }
+.product-detail {
+  border: 1px solid #cdcdcd;
+  padding: 50px 40px;
+  margin: 20px 0;
+  .description {
+    padding-left: 30px;
+    .title {
+      display: inline-block;
+      padding-left: 15px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      color: #595959;
+      margin-top: 0;
+      float: left;
+      font-family:sans-serif;
+      font-size :25px;
+    }
+    .price {
+      display: inline-block;
+      margin-right: 35px;
+      font-family: sans-serif;
+      float:right;
+      color: $main-color;
+      font-size: 25px;
+    }
+    .farm-name {
+      color: #cdcdcd;
+      // text-transform: uppercase;
+      font-size: 17px;
+      font-weight: 100;
+    }
+    .details {
+      margin-top : 10px;
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 21px;
+      margin-bottom: 25px;
+    }
+    .add_panier, .edit, .delete {
+      margin-left: 15px;
+      margin-top: 10px;
+      float: left;
+      color: white;
+      padding: 10px 20px;
+      border:0;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .add_panier, .delete {
+      background-color:$secondary-color;
+    }
+  }
+}
+@media screen and (max-width:768px) {
+  .product-detail .description  {
+    margin-top: 35px;
+  }
+}
