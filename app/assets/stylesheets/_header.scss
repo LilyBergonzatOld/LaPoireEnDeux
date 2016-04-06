@@ -14,6 +14,47 @@
   .navbar-header {
     button.navbar-toggle {
       margin-top: 20px;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      border: 2px solid grey;
+      .icon-bar {
+        &:nth-child(2) {
+          transform: rotate(0deg);
+          transition: .4s all ease-in;
+        }
+        &:nth-child(3) {
+          transform: rotate(0deg);
+          transition: .4s all ease-in;
+        }
+        &:nth-child(4) {
+          transform: rotate(0deg);
+          transition: .4s all ease-in-out;
+        }
+      }
+    }
+    button.navbar-toggle:hover {
+      position:relative;
+      .icon-bar {
+        &:nth-child(2) {
+          position: absolute;
+          transform: rotate(270deg);
+          top: 20px;
+        }
+        &:nth-child(3) {
+          position: absolute;
+          transform: rotate(-125deg);
+          width: 15px;
+          left: 9px;
+
+        }
+        &:nth-child(4) {
+          position: absolute;
+          transform: rotate(125deg);
+          width: 15px;
+          right: 8px;
+        }
+      }
     }
   }
   #navbar {
@@ -22,7 +63,7 @@
       color: $secondary-color;
     }
     .nav li a {
-			text-align: right;
+      text-align: right;
       padding: 10px;
       background-color: transparent;
       text-transform: uppercase;
@@ -49,16 +90,20 @@
   }
 }
 @media screen and (max-width:768px) {
-	#navbar {
-		margin-top: 17px;
-		width: auto;
-		float: right;
-		ul {
-			margin-top: 3px;
-			background-color: rgba(240,240,240,0.9);
-			&>li {
-				padding: 5px 30px;
-			}
-		}
-	}
+  #header #navbar {
+    margin-top: 7px;
+    width: auto;
+    float: right;
+    ul {
+      margin-top: -10px;
+      padding: 20px 0;
+      background-color: rgba(254, 84, 101,0.8);
+      & > li {
+        padding: 5px 30px;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
 }
