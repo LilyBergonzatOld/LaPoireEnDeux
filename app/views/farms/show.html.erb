@@ -29,12 +29,11 @@
         <p class="filter-section-title">Propriétaire du magasin</p>
         <ul>
           <!--Si le fermier a spécifié qu'il souhaité renseigné tel ou tel information on les affiche -->
-
-
-          <li><%= @farm.owner.nickname %></li>
+          <li><%= @farm.owner.first_name %> <%= @farm.owner.last_name%></li>
           <li><%= @farm.owner.city %></li>
           <li>Numéro de téléphone</li>
           <li><%= @farm.owner.email %></li>
+
         </ul>
       </div>
     </nav>
