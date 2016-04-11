@@ -2,6 +2,11 @@ class ShoppingCartController < ApplicationController
   load_and_authorize_resource
 
   def index
+    # @shopping_cart.shopping_cart_items.each { |shopping_cart_item|
+    #   if shopping_cart_item.item == nil
+    #     @shopping_cart.remove(shopping_cart_item, 3)
+    #   end
+    # }
   end
 
   def set

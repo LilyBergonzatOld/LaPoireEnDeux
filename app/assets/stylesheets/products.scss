@@ -15,23 +15,35 @@
       background-position: center;
       background-size: cover;
     }
-    .edit, .delete {
-      z-index: 999;
+    .delete, .edit {
       position: absolute;
-      height: 30px;
-      width: 50%;
-      color: white;
       display: none;
-      text-align: center;
-      border-radius: 0;
-      padding: 3px;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid white;
+      top: 0;
+      background-size: 70%;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      -webkit-transition:.2s all ease-in;
+      -moz-transition:.2s all ease-in;
+      -o-transition:.2s all ease-in;
+      transition:.2s all ease-in;
     }
     .edit {
-      left:50%; top:0;
+      right: 0;
+      background-image:asset_url('icones/edit.png');
       background-color: $main-color;
     }
     .delete {
-      left: 0;top: 0;
+      right: 30px;
+      background-image:asset_url('icones/delete.png');
+      background-color: red;
+    }
+    .delete:hover, .edit:hover {
+      background-size: 60%;
     }
     .description {
       position: relative;
@@ -44,37 +56,41 @@
       p.title {
         color: black;
         width: 60%;
-        margin: 0; padding: 0;
+        margin: 0;
+        padding: 0;
       }
-      .price{
+      .price {
         color: $main-color;
         width: 60%;
-        margin: 4px 0 0 0;
+        margin: 4px 0 0;
       }
       .add_panier {
-          height: 40px;
-          width: 90%;
-          color: white;
-          padding: 10px 5px;
+        height: 40px;
+        width: 90%;
+        color: white;
+        padding: 10px 5px;
+        position: absolute;
+        opacity: 0;
+        top: 10px;
+        left: 5%;
+        text-align: left;
+        background-color: $secondary-color;
+        border-radius: 5px;
+        border: 0;
+        transition: 0.4s all ease-in;
+        &::after {
+          content: '';
+          width: 20px;
+          height: 20px;
+          display: block;
+          background-repeat: no-repeat;
+          background-image: asset-url('icones/panier.png');
+          background-size: 20px;
+          background-position: right;
           position: absolute;
-          opacity: 0;
-          top: 10px;
-          left: 5%;
-          text-align: left;
-          background-color: $secondary-color;
-          border-radius:5px; border: 0;
-          transition: .4s all ease-in;
-          &::after {
-            content:'';
-            width: 20px; height: 20px;
-            display: block;
-            background-repeat: no-repeat;
-            background-image:asset-url('icones/panier.png');
-            background-size: 20px;
-            background-position: right;
-            position: absolute;
-            right: 45%; bottom: 10px;
-          }
+          right: 45%;
+          bottom: 10px;
+        }
       }
     }
   }
@@ -83,8 +99,10 @@
     .add_panier {
       opacity: 1;
     }
-    .edit, .delete {
-      // display: block;
+    .delete,
+    .edit {
+      opacity: 1;
+      display: block;
     }
   }
   a {
@@ -98,10 +116,10 @@
       padding-top: 75px;
       margin-top: 20px;
       text-align: center;
-      background-image:url();
+      background-image: url("");
       background-repeat: no-repeat;
       background-size: contain;
-      background-position:center;
+      background-position: center;
     }
     .new_product:hover {
       color: black;
@@ -127,14 +145,14 @@
       color: #595959;
       margin-top: 0;
       float: left;
-      font-family:sans-serif;
-      font-size :25px;
+      font-family: sans-serif;
+      font-size: 25px;
     }
     .price {
       display: inline-block;
       margin-right: 35px;
       font-family: sans-serif;
-      float:right;
+      float: right;
       color: $main-color;
       font-size: 25px;
     }
@@ -145,30 +163,30 @@
       font-weight: 100;
     }
     .details {
-      margin-top : 10px;
+      margin-top: 10px;
       font-family: sans-serif;
       font-size: 16px;
       font-weight: 100;
       line-height: 21px;
       margin-bottom: 25px;
     }
-    .add_panier, .edit, .delete {
+    .add_panier {
       margin-left: 15px;
       margin-top: 10px;
       float: left;
       color: white;
       padding: 10px 20px;
-      border:0;
+      border: 0;
       border-radius: 5px;
       text-align: center;
     }
-    .add_panier, .delete {
-      background-color:$secondary-color;
+    .add_panier {
+      background-color: $secondary-color;
     }
   }
 }
 @media screen and (max-width:768px) {
-  .product-detail .description  {
+  .product-detail .description {
     margin-top: 35px;
   }
 }

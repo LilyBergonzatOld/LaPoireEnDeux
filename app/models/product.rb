@@ -12,7 +12,7 @@
 
 class Product < ActiveRecord::Base
   belongs_to :farm
-  
+
   def to_s
     "#{name}"
   end

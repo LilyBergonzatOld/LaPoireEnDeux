@@ -49,13 +49,11 @@
         <% @farm.products.each do |product| %>
         <div class="col-md-3  col-sm-4 col-xs-6">
 					<article class="product">
-            <div class="photo-contain" style='background-image:url(https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg)'>
-            </div>
+            <div class="photo-contain" style='background-image:url(https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg)'></div>
             <%= link_to(product) do %>
-						<%= link_to(edit_product_path(product)) do %><p class='edit'>Editer</p><% end %>
-						<%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>
-
-						<div class="description">
+              <%= link_to '', edit_product_path(product), class: 'edit' %>
+              <%= link_to '', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>
+          	<div class="description">
 								<p class='title'><%= product %></h3>
 								<p class="price"><%= number_to_currency product.price %></p>
 								<%= link_to '', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>

@@ -1,6 +1,9 @@
 <section class="shoppingcart">
   <h2>Mon panier</h2>
   <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
+  <% if shopping_cart_item.item.nil? %>
+    <p>Des items de votre panier ne sont plus disponible.</p>
+  <% else %>
   <div class='row product'>
     <img src='https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg' alt='' class='col-sm-4'/>
     <div class="description col-sm-5">
@@ -42,6 +45,7 @@
       </div>
     </div>
   </div>
+  <% end %>
   <% end %>
   <div class='row paypal'>
     <div class="col-sm-6"></div>
