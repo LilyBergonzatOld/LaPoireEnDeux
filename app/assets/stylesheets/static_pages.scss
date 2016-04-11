@@ -36,15 +36,15 @@
           background-size: 50%;
           background-repeat: no-repeat;
           background-position: center;
-          &:nth-child(1){
-            background-image: asset-url("icones/boutique.png");
-          }
-          &:nth-child(2){
-            background-image:asset-url("icones/boutique.png");
-          }
-          &:nth-child(3){
-            background-image:asset-url("icones/boutique.png");
-          }
+        }
+        &:nth-child(1) .circle {
+          background-image:asset_url('icones/raison.png');
+        }
+        &:nth-child(2) .circle {
+          background-image:asset_url('icones/local.png');
+        }
+        &:nth-child(3) .circle {
+          background-image:asset_url('icones/exchange.png');
         }
         .circle-line {
           text-align: center;
