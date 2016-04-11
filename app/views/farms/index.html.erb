@@ -46,12 +46,12 @@
       <div class='recherche-out row'>
         <% @farms.each do |farm| %>
         <%= link_to(farm) do %>
-        <div class="col-md-3 col-sm-4 col-xs-6">
-          <div class="item_boutique" style='background-image:url(http://www.ane-charlevoix.com/media/accueil/grand/photo_06.jpg)'>
-            <div class="description">
-              <div class="item-boutique-title"><%= farm.name %></div>
-              <div class="item-boutique-address"><%= farm.city %></div>
-            </div>
+        <div class="col-md-3 col-sm-4 col-xs-6 item_boutique">
+          <div class="photo-contain" style='background-image:url(http://www.ane-charlevoix.com/media/accueil/grand/photo_06.jpg)'>
+          </div>
+          <div class="description">
+            <div class="item-boutique-title"><%= farm.name %></div>
+            <div class="item-boutique-address"><%= farm.city %></div>
           </div>
         </div>
         <% end %>
