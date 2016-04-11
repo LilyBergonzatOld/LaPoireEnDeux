@@ -67,6 +67,21 @@
       padding: 10px;
       background-color: transparent;
       text-transform: uppercase;
+      &.header-panier {
+        padding-top: 0;
+        img {
+          height: 25px;
+          width: 25px;
+          padding: 0;
+          margin-left: 3px;
+          display: block;
+        }
+        p {
+          display: block;
+          text-align: center;
+          margin: 0;
+        }
+      }
     }
     .nav li:hover {
       background-color: transparent;
@@ -74,18 +89,6 @@
     .item-compte {
       text-align: right;
       height: 30px;
-    }
-    .header-panier {
-      img {
-        height: 20px;
-        padding: 0;
-        margin-right: 10px;
-        display: inline-block;
-      }
-      p {
-        display: inline-block;
-        margin: 0;
-      }
     }
   }
 }
@@ -102,6 +105,28 @@
         padding: 5px 30px;
         a {
           color: white;
+          #panier-img {
+            display: none;
+          }
+          &.header-panier {
+
+            p {
+              display: inline-block;
+              float: right;
+              &::after {
+                content:'';
+                display: inline-block;
+                float: right;
+                margin-left: 10px;
+                width: 25px;
+                height: 25px;
+                background-image: asset_url('icones/panier.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+            }
+          }
         }
       }
     }

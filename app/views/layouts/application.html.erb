@@ -56,7 +56,8 @@
             <% end %>
             <li>
               <%= link_to shopping_cart_path, class: 'header-panier' do %>
-              <div class=''><%= image_tag "panier.png" %>
+              <div>
+                <%= image_tag "icones/panier-header.png", id: 'panier-img' %>
                 <p class="text-center price"><%= number_to_currency @shopping_cart.total %></p>
               </div>
               <% end %>
