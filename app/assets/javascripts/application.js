@@ -15,6 +15,8 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
 function menuFilterResponsive(menuFilter, displayButton) {
   if (menuFilter.className.match(/after/)) {
     menuFilter.className = 'col-sm-3 col-xs-12 text-center-xs menu-filter';
@@ -25,14 +27,36 @@ function menuFilterResponsive(menuFilter, displayButton) {
   }
 }
 window.onload = function() {
-  //Si le menu existe alors on est sur une page correspondante
+  //On stocke les éléments
+  var menuFilter = document.getElementsByClassName('menu-filter')[0];
+  var displayButton = document.getElementsByClassName('display-filter')[0];
+  //On test si on est sur la bonne page
   if (document.getElementsByClassName('menu-filter')[0]) {
-    var menuFilter = document.getElementsByClassName('menu-filter')[0];
-    var displayButton = document.getElementsByClassName('display-filter')[0];
+    //On rajoute l'évenement de clic
     displayButton.addEventListener('click', function() {
+      //Test largeur écran, si true alors lancement fonction
       if (window.innerWidth < 768) {
         menuFilterResponsive(menuFilter, displayButton);
       }
     }, false);
   }
+  //On stocke l'url
+  var storedHash = document.location.href;
+  //Recalcule l'url
+  window.setInterval(function() {
+    //Si changement Url, on relance
+    if (document.location.href != storedHash) {
+      console.log('url change')
+      storedHash = document.location.href;
+      var menuFilter = document.getElementsByClassName('menu-filter')[0];
+      var displayButton = document.getElementsByClassName('display-filter')[0];
+      if (document.getElementsByClassName('menu-filter')[0]) {
+        displayButton.addEventListener('click', function() {
+          if (window.innerWidth < 768) {
+            menuFilterResponsive(menuFilter, displayButton);
+          }
+        }, false);
+      }
+    }
+  }, 1000);
 }

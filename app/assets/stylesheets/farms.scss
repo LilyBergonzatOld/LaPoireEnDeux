@@ -81,10 +81,12 @@
 			width: 100%;
 			display: none;
 			text-align: center;
-			background-color: $secondary-bg-color;
+			background-color: $secondary-color;
 			height: 55px;
-			border-radius: 5px;
-			color: black;
+			font-family:sans-serif;
+			font-weight: thin;
+			letter-spacing: 3px;
+			color: white;
 			text-transform: uppercase;
 		}
 		.form-inline {
@@ -240,6 +242,5 @@
 				opacity: 0;
 			}
 		}
-
 	}
 }
