@@ -96,6 +96,34 @@
 					background-position: center;
 					background-repeat: no-repeat;
 				}
+				.delete, .edit {
+				      position: absolute;
+				      width: 30px;
+				      height: 30px;
+				      border-radius: 5px;
+				      border: 1px solid white;
+				      top: 5px;
+				      background-size: 70%;
+				      background-position: center;
+				      background-repeat: no-repeat;
+				      -webkit-transition:.2s all ease-in;
+				      -moz-transition:.2s all ease-in;
+				      -o-transition:.2s all ease-in;
+				      transition:.2s all ease-in;
+				    }
+				    .edit {
+				      right: 20px;
+				      background-image:asset_url('icones/edit.png');
+				      background-color: $main-color;
+				    }
+				    .delete {
+				      right: 55px;
+				      background-image:asset_url('icones/delete.png');
+				      background-color: $secondary-color;
+				    }
+				    .delete:hover, .edit:hover {
+				      background-size: 60%;
+				    }
 				.description {
 					border: 1px solid grey;
 					min-height: 40px;
