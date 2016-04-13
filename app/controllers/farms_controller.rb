@@ -89,6 +89,9 @@ class FarmsController < ApplicationController
   # DELETE /farms/1
   # DELETE /farms/1.json
   def destroy
+    @farm.products.each do |product|
+      product.destroy
+    end
     @farm.destroy
     respond_to do |format|
       format.html { redirect_to farms_url, notice: 'Farm was successfully destroyed.' }
