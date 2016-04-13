@@ -10,13 +10,14 @@
         <p class="filter-section-title">Catégories</p>
         <label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
         <label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
-        <label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
-        <label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
+        <label class='filter' data-filter='viandes'><input type='checkbox'>Viandes</label>
+        <label class='filter' data-filter='céréales'><input type='checkbox'>Céréales</label>
+        <label class='filter' data-filter='laitage'><input type='checkbox'>Laitages et oeufs</label>
       </div>
       <div class='filter-section'>
         <p class="filter-section-title">Trier Par</p>
+        <label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
         <label class='filter' data-filter='proximite'><input type='checkbox'>Proximité</label>
-        <label class='filter' data-filter='prix'><input type='checkbox'>Prix</label>
       </div>
       <div class='filter-section'>
         <form class='form-inline'>
@@ -51,7 +52,7 @@
         <% @farms.each do |farm| %>
         <%= link_to(farm) do %>
         <div class="col-md-3 col-sm-4 col-xs-6 item_boutique">
-          <div class="photo-contain" style='background-image:url(http://www.ane-charlevoix.com/media/accueil/grand/photo_06.jpg)'>
+          <div class="photo-contain">
           </div>
           <% if farm.owner==current_user && request.original_url==request.base_url+user_farms_path %>
           <%= link_to '', edit_farm_path(farm), class: 'edit' %>

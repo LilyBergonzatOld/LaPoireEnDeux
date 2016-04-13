@@ -6,6 +6,8 @@
         <label class='filter' data-filter='fruit'><input type='checkbox'>Fruits</label>
         <label class='filter' data-filter='légumes'><input type='checkbox'>Légumes</label>
         <label class='filter' data-filter='viande'><input type='checkbox'>Viande</label>
+        <label class='filter' data-filter='céréales'><input type='checkbox'>Céréales</label>
+        <label class='filter' data-filter='laitage'><input type='checkbox'>Laitages et oeufs</label>
         <label class='filter' data-filter='bio'><input type='checkbox'>Bio</label>
       </div>
       <div class='filter-section'>
@@ -81,10 +83,3 @@
     </div>
   </div>
 </section>
-<p>
-  <br/>
-</p>
-<p></p>
-<% if can? :manage, @farm or (current_user.present? and @farm.owner_id == current_user.id) %>
-<%= link_to 'Edit', edit_farm_path(@farm), class: 'btn btn-primary btn-sm'  %>
-<% end %>
