@@ -5,7 +5,7 @@
       <h3 class='title'><%= product %></h3>
       <p class="price"><%= number_to_currency product.price %></p>
       <p class="farm-name col-xs-12"><%= product.farm.name %></p>
-      <p class='details col-xs-12'>Vivamus eu interdum velit, id gravida elit. Duis sed arcu sit amet ligula malesuada lacinia ac ut nisl. Maecenas tempus ante eu nisl mattis, scelerisque auctor lectus lacinia. Mauris elementum sed lectus quis faucibus. Curabitur eget tempus enim. Donec sed nibh lacus. Pellentesque tempor molestie viverra. Nullam venenatis massa id quam ultricies, non mollis orci elementum. Morbi suscipit et nisi vitae sodales. Integer quam risus, euismod quis mollis vitae, dapibus eu metus. Praesent tristique, diam sed efficitur aliquam, lacus dolor condimentum neque, et condimentum mauris ligula at quam. In hac habitasse platea dictumst.</p>
+      <p class='details col-xs-12'><%= product.description %></p>
       <%= link_to 'Ajoutez au panier', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
       <% if product.farm.owner==current_user %>
         <%= link_to 'Editez', edit_product_path(product), class:'btn btn-success btn-sm edit'  %>

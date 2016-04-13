@@ -10,9 +10,7 @@
       <p class='title'><%= link_to shopping_cart_item.item, shopping_cart_item.item %></p>
       <p class='price'><%= number_to_currency shopping_cart_item.item.price %></p>
       <p class='farm-name col-xs-12'><%= shopping_cart_item.item.farm %></p>
-      <p class='details col-xs-12'>Vivamus eu interdum velit, id gravida elit. Duis sed arcu sit amet ligula malesuada lacinia ac ut nisl. Maecenas tempus ante eu nisl mattis, scelerisque auctor lectus lacinia. Mauris elementum sed lectus quis faucibus.
-        Curabitur eget tempus enim. Donec sed nibh lacus. Pellentesque tempor molestie viverra. Nullam venenatis massa id quam ultricies, non mollis orci elementum. Morbi suscipit et nisi vitae sodales. Integer quam risus, euismod quis mollis vitae, dapibus
-        eu metus. Praesent tristique, diam sed efficitur aliquam, lacus dolor condimentum neque, et condimentum mauris ligula at quam. In hac habitasse platea dictumst.</p>
+      <p class='details col-xs-12'><%= shopping_cart_item.item.description %></p>
       <div class='remove col-xs-12'>
         <%= link_to raw('Supprimer'), shopping_cart_path(product_id: shopping_cart_item.item.id , quantity: -shopping_cart_item.quantity), method: :post , class:'delete'%>
       </div>
