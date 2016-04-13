@@ -1,5 +1,11 @@
 <section class="shoppingcart">
   <h2>Mon panier</h2>
+  <% if @shopping_cart.shopping_cart_items.length==0 %>
+  <div class="shopping-cart-empty"></div>
+  <p class='shopping-cart-empty'>Votre panier est vide.<br>
+    <%= link_to 'Voulez vous continuez vos achat ?', farms_path %>
+  </p>
+  <% else %>
   <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
   <% if shopping_cart_item.item.nil? %>
     <p>Des items de votre panier ne sont plus disponible.</p>
@@ -76,4 +82,5 @@
       <%= link_to 'Passez commande', products_path , class: 'btn btn-primary btn-sm add_panier' %>
     </div>
   </div>
+  <% end %>  <!-- End if shopping_cart_items.length == 0 -->
 </section>
