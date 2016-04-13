@@ -1,5 +1,9 @@
 <%= simple_form_for @farm do |f| %>
   <%= f.input :name, :label => "Nom ferme" %>
+  <div class="form-group string optional farm_descritption">
+    <label class="string optional control-label" for="farm_description">Description</label>
+    <%= f.text_area :description %>
+  </div>
   <%= f.input :address, :label => "Adresse ferme" %>
   <%= f.input :zipcode, :label => "Code postal" %>
   <%= f.input :city, :label => "Ville" %>
