@@ -1,0 +1,29 @@
+<h1>Fermes</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Propriétaire</th>
+      <th>Adresse</th>
+      <th>Création</th>
+      <th>MAJ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @farms.each do |farm| %>
+      <tr>
+        <td><%= farm.id %></td>
+        <td><%= link_to farm, farm %></td>
+        <td><%= farm.owner %></td>
+        <td><%= farm.address %> <%= farm.zipcode %> <%= farm.city %></td>
+        <td><%= farm.created_at %></td>
+        <td><%= farm.updated_at %></td>
+        <td>
+			<%= link_to 'Editer ferm', edit_farm_path(farm), class: 'btn btn-primary btn-sm' %>
+			<%= link_to 'Supprimer', farm, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

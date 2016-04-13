@@ -17,6 +17,14 @@ class FarmsController < ApplicationController
 
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
+  # GET /farms/list
+  # GET /farms.json
+  def list
+    if current_user.status!='admin'
+      redirect_to root_path
+    end
+  end
+
   # GET /farms
   # GET /farms.json
   def index

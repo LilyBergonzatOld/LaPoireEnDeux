@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'wip' => 'static_pages#wip'
   get 'users/farms' => 'farms#index', :defaults => { :from_user => true }, as: :user_farms
   get 'farms/new' => 'farms#new', :defaults => { :from_user => true }, as: :farm_new
+  get 'farms/list' => 'farms#list', :defaults => { :from_user => true }, as: :farms_list
+
+  # get 'farms/:id/products/new' => 'products#create', as: :product_new
 
   resources :products
   resources :users

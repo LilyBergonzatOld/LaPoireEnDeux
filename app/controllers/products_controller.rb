@@ -18,7 +18,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if signed_in? && current_user.status =='admin'
+      @products = Product.all
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /products/1
@@ -28,7 +32,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+      @product = Product.new
   end
 
   # GET /products/1/edit
@@ -71,7 +75,11 @@ class ProductsController < ApplicationController
     farm = @product.farm
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to farm_path(farm), notice: 'Product was successfully destroyed.' }
+      if current_user.status=='admin'
+      format.html { redirect_to products_path, notice: 'Product was successfully destroyed.' }
+      else
+        format.html { redirect_to farm_path(farm), notice: 'Product was successfully destroyed.' }
+      end
       format.json { head :no_content }
     end
   end
