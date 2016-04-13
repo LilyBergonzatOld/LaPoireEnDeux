@@ -27,7 +27,6 @@
     margin-bottom: 20px;
     margin-top: 50px;
     &::after {
-      position: absolute;
       content: "";
       display: block;
       background-image: asset_url('icones/tear.png');
