@@ -7,6 +7,8 @@
       <th>Nom</th>
       <th>Prix</th>
       <th>Numéro de ferme</th>
+      <th>Bio</th>
+      <th>Quantité</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
         <td><%= link_to product, product %></td>
         <td><%= product.price %></td>
         <td><%= product.farm_id %></td>
+        <td><%= product.bio %></td>
+        <td><%= product.quantite %></td>
         <td>
 			<%= link_to 'Ajouter au panier', shopping_cart_path(product_id: product.id), :method => 'POST' , class: 'btn btn-primary btn-sm' %>
 			<%= link_to 'Editer produit', edit_product_path(product), class: 'btn btn-primary btn-sm' %>
