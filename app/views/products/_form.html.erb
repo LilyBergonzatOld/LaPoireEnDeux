@@ -2,16 +2,17 @@
 <%= simple_form_for @product do |f| %>
 <div class="form-inputs">
   <%= f.input :name, :label =>'Nom produit' %>
-  <%= f.input :price, :label =>'Prix' %>
-  <%= f.input :quantite, :label => 'Quantité à vendre', :placeholder => 'Ex : 500g' %>
-  <div class="form-group float optional product_bio">
-    <label class="float optional control-label" for="product_bio">Certifié bio</label>
-    <%= f.check_box :bio, :value => '1' %>
-  </div>
   <div class="form-group string optional product_descritption">
     <label class="string optional control-label" for="product_description">Description</label>
     <%= f.text_area :description %>
   </div>
+  <div class="form-group float optional product_bio">
+    <label class="float optional control-label" for="product_bio">Certifié bio</label>
+    <%= f.check_box :bio, :value => '1' %>
+  </div>
+  <%= f.input :price, :label =>'Prix' %>
+  <%= f.input :quantite, :label => 'Quantité à vendre', :placeholder => 'Ex : 500g' %>
+
 
   <%= f.association :farm, :label=> 'Ferme'%>
 </div>

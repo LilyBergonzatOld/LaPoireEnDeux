@@ -6,26 +6,27 @@
 			<%= f.error_notification %>
 
 			<div class="form-inputs">
+				<p class="field_name">CONNEXION</p>
 				<%= f.input :nickname, required: true, autofocus: true %>
-				<%= f.input :first_name, required: true, autofocus: true, label: "Prénom" %>
-				<%= f.input :last_name, required: true, autofocus: true, label: "Nom" %>
-				<div class="form-group string optional farm_descritption">
-			    <label class="string optional control-label" for="farm_description">Description</label>
-					<%= f.text_area :description, required: false, autofocus: true, label: 'Description' %>
-			  </div>
+				<%= f.input :password, autocomplete: "off", hint: "Laisser ce champs vide si vous ne voulez pas changer le mot de passe", required: false %>
+				<%= f.input :password_confirmation, required: false %>
+				<%= f.input :email, required: true, autofocus: true, label: "E-mail" %>
 				<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 					<p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
 				<% end %>
-
-				<%= f.input :email, required: true, autofocus: true, label: "E-mail" %>
+				<p class="field_name">INFORMATIONS PERSONNELLES</p>
+				<%= f.input :first_name, required: true, autofocus: true, label: "Prénom" %>
+				<%= f.input :last_name, required: true, autofocus: true, label: "Nom" %>
+				<div class="form-group string optional farm_descritption">
+					<label class="string optional control-label" for="farm_description">Description</label>
+					<%= f.text_area :description, required: false, autofocus: true, label: 'Description' %>
+				</div>
 				<%= f.input :phone, required: false, autofocus: true, label: "Téléphone" %>
-
 				<%= f.input :address, required: true, autofocus: true, label: "Adresse" %>
 				<%= f.input :zipcode, required: true, autofocus: true, label: "Code Postal" %>
 				<%= f.input :city, required: true, autofocus: true, label: "Ville" %>
+				<p class="field_name">CONFIRMER LES CHANGEMENTS</p>
 
-				<%= f.input :password, autocomplete: "off", hint: "Laisser ce champs vide si vous ne voulez pas changer le mot de passe", required: false %>
-				<%= f.input :password_confirmation, required: false %>
 				<%= f.input :current_password, hint: "Renseignez votre mot de passe actuel pour confirmer les changements", required: true %>
 			</div>
 
