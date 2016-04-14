@@ -13,8 +13,7 @@
   <%= f.input :price, :label =>'Prix' %>
   <%= f.input :quantite, :label => 'Quantité à vendre', :placeholder => 'Ex : 500g' %>
 
-
-  <%= f.association :farm, :label=> 'Ferme'%>
+  <%= f.association :product_type, :label=> 'Type de produit'%>
 </div>
 <div class="form-actions">
   <%= f.button :submit, :value=>'Validez' %>

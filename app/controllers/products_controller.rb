@@ -32,7 +32,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-      @product = Product.new
+    @product = Product.new
+    @product.build_farm({:id => params[:farm_id]})
   end
 
   # GET /products/1/edit
@@ -92,6 +93,9 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :description, :farm_id, :quantite, :bio)
+      puts('---------------------------------')
+      puts(params)
+      puts('---------------------------------')
+      params.require(:product).permit(:name, :price, :description, :product_type_id, :farm_id, :quantite, :bio)
     end
 end
