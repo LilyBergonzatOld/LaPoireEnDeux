@@ -8,7 +8,7 @@
   <% else %>
   <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>
   <% if shopping_cart_item.item.nil? %>
-    <p>Des items de votre panier ne sont plus disponible.</p>
+    <% shopping_cart_item.delete %>
   <% else %>
   <div class='row product'>
     <img src='https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg' alt='' class='col-sm-4'/>
