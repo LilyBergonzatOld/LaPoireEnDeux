@@ -3,7 +3,7 @@
   <% if @shopping_cart.shopping_cart_items.length==0 %>
   <div class="shopping-cart-empty"></div>
   <p class='shopping-cart-empty'>Votre panier est vide.<br>
-    <%= link_to 'Voulez vous continuez vos achat ?', farms_path %>
+    <%= link_to 'Voulez-vous continuer vos achats ?', farms_path %>
   </p>
   <% else %>
   <% @shopping_cart.shopping_cart_items.each do |shopping_cart_item| %>

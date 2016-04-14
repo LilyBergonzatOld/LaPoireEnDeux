@@ -23,7 +23,7 @@
         <ul>
           <li><%= @farm.name %></li>
           <li><%= @farm.address %>&nbsp;<%= @farm.zipcode %>&nbsp;<%= @farm.city %></li>
-          <li>Téléphone du magasin</li>
+          <li><%= @farm.owner.phone %></li>
           <li class='description'><%= @farm.description %></li>
         </ul>
       </div>
@@ -33,7 +33,7 @@
           <!--Si le fermier a spécifié qu'il souhaité renseigné tel ou tel information on les affiche -->
           <li><%= @farm.owner.first_name %> <%= @farm.owner.last_name%></li>
           <li><%= @farm.owner.city %></li>
-          <li>Numéro de téléphone</li>
+          <li><%= @farm.owner.phone %></li>
           <li><%= @farm.owner.email %></li>
 
         </ul>
