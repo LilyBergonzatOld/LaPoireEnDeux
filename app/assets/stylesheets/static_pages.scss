@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .static-page {
-
+  margin: auto;
   h2 {
 		text-transform: uppercase;
 		text-align: center;
@@ -49,6 +49,79 @@
         .circle-line {
           text-align: center;
         }
+      }
+    }
+  }
+  &.team {
+    p.description {
+      margin: 50px 0;
+    }
+    .bubble {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      .person {
+        height: 250px;
+        margin-top: 40px;
+        .circle {
+          width: 180px;
+          height: 180px;
+          border-radius: 100%;
+          border: 1px solid grey;
+          margin: auto;
+          margin-bottom: 20px;
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          -webkit-transition:.4s all ease;
+          -moz-transition:.4s all ease;
+          -o-transition:.4s all ease;
+          transition:.4s all ease;
+          &:hover {
+            background-size: 150%;
+          }
+        }
+        .description {
+          height: 100px;
+          .name {
+            text-align: center;
+          }
+          .content {
+            font-size: 11px;
+            text-align: center;
+            color: $secondary-color;
+          }
+        }
+        &:nth-child(1) .circle {
+          background-image:asset_url('team/ferrara.jpg');
+        }
+        &:nth-child(2) .circle {
+          background-image:asset_url('team/iglesias.jpg');
+        }
+        &:nth-child(3) .circle {
+          background-image:asset_url('team/lucile.jpg');
+        }
+        &:nth-child(4) .circle {
+          background-image:asset_url('team/caubel.jpg');
+        }
+        &:nth-child(5) .circle {
+          background-image:asset_url('team/lataza.jpg');
+        }
+        &:nth-child(6) .circle {
+          background-image:asset_url('team/pouillhe.jpg');
+        }
+        &:nth-child(7) .circle {
+          background-image:asset_url('team/');
+        }
+        &:nth-child(8) .circle {
+          background-image:asset_url('team/belard.jpg');
+        }
+        &:nth-child(9) .circle {
+          background-image:asset_url('team/bergonzat.png');
+        }
+        &:nth-child(10) .circle {
+          background-image:asset_url('team/revel.jpg');
+        }
+
       }
     }
   }
