@@ -76,9 +76,9 @@ class ProductsController < ApplicationController
     @product.destroy
     respond_to do |format|
       if current_user.status=='admin'
-      format.html { redirect_to products_path, notice: 'Product was successfully destroyed.' }
+        format.html { redirect_to farm, notice: 'Product was successfully destroyed.' }
       else
-        format.html { redirect_to farm_path(farm), notice: 'Product was successfully destroyed.' }
+        format.html { redirect_to farm, notice: 'Product was successfully destroyed.' }
       end
       format.json { head :no_content }
     end

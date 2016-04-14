@@ -6,7 +6,9 @@
       <p class="price"><%= number_to_currency product.price %></p>
       <p class="farm-name col-xs-12"><%= product.farm.name %></p>
       <p class='details col-xs-12'><%= product.description %></p>
+      <% if product.farm.owner_id!=current_user.id %>
       <%= link_to 'Ajoutez au panier', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
+      <% end %>
       <% if product.farm.owner==current_user %>
         <%= link_to 'Editez', edit_product_path(product), class:'btn btn-success btn-sm edit'  %>
         <%= link_to 'Supprimer', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>

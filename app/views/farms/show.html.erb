@@ -64,7 +64,9 @@
             <div class="description">
 								<p class='title'><%= product %></h3>
 								<p class="price"><%= number_to_currency product.price %></p>
-								<%= link_to '', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
+                <% if product.farm.owner_id!=current_user.id %>
+                <%= link_to '', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
+                <% end %>
 						</div>
 						<% end %>
 					</article>
