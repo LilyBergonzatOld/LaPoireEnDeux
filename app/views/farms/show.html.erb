@@ -66,9 +66,9 @@
                 <% if product.bio==1 %>
                 <p class="bio-label"></p>
                 <% end %>
-								<p class='title'><%= product %></h3>
+								<h3 class='title'><%= product %></h3>
 								<p class="price"><%= number_to_currency product.price %></p>
-                <% if product.farm.owner_id!=current_user.id %>
+                <% if current_user and product.farm.owner_id!=current_user.id %>
                 <%= link_to '', shopping_cart_path(product_id: product.id), method: :post , class: 'btn btn-primary btn-sm add_panier' %>
                 <% end %>
 						</div>
