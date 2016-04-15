@@ -55,7 +55,8 @@
         <% @farm.products.each do |product| %>
         <div class="col-md-3  col-sm-4 col-xs-6">
 					<article class="product">
-            <div class="photo-contain" style='background-image:url(https://www.organicfacts.net/wp-content/uploads/2013/05/Fruits3.jpg)'></div>
+            <% type = product.product_type.to_s.parameterize.underscore %>
+            <div class="photo-contain <%= type %>"></div>
             <%= link_to(product) do %>
               <% if product.farm.owner==current_user %>
               <%= link_to '', edit_product_path(product), class: 'edit' %>

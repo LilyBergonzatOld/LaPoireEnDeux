@@ -32,7 +32,22 @@
         height: 140px;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
+        &.viande {
+          background-image:asset-url('icones/typeproduct/viande.png');
+        }
+        &.laitage_et_oeuf {
+          background-image:asset-url('icones/typeproduct/laitage.png');
+        }
+        &.cereale {
+          background-image:asset-url('icones/typeproduct/cereale.png');
+        }
+        &.legume {
+          background-image:asset-url('icones/typeproduct/legume.png');
+        }
+        &.fruit {
+          background-image:asset-url('icones/typeproduct/fruit.png');
+        }
       }
       .delete,
       .edit {
@@ -74,6 +89,7 @@
         padding: 10px;
         vertical-align: bottom;
         font-size: 15px;
+        border-top: .5px solid grey;
         p.title {
           color: black;
           width: 60%;
@@ -117,7 +133,7 @@
           height: 30px;
           width: 30px;
           position: absolute;
-          top: 15px;
+          top: 12px;
           right: 10px;
           transition: 0.4s all ease-in;
           background-image:asset_url('icones/bio.png');
