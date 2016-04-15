@@ -62,6 +62,9 @@
               <%= link_to '', product, method: :delete, data: { confirm: 'Vous êtes sur ?' }, class: 'btn btn-danger btn-sm delete' %>
               <% end %>
             <div class="description">
+                <% if product.bio==1 %>
+                <p class="bio-label"></p>
+                <% end %>
 								<p class='title'><%= product %></h3>
 								<p class="price"><%= number_to_currency product.price %></p>
                 <% if product.farm.owner_id!=current_user.id %>

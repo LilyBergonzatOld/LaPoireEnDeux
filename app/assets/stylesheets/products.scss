@@ -113,6 +113,18 @@
             bottom: 10px;
           }
         }
+        .bio-label {
+          height: 30px;
+          width: 30px;
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          transition: 0.4s all ease-in;
+          background-image:asset_url('icones/bio.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
       }
     }
     .product:hover {
